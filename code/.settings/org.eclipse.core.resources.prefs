@@ -1,0 +1,11 @@
+#Fri Jan 09 00:22:11 CST 2015
+eclipse.preferences.version=1
+encoding//common/context_processors.py=utf-8
+encoding//common/log.py=utf-8
+encoding//common/mymako.py=utf-8
+encoding//home_application/urls.py=utf-8
+encoding//home_application/views.py=utf-8
+encoding/settings.py=utf-8
+encoding/settings_global_dev.py=utf-8
+encoding/urls.py=utf-8
+encoding/wsgi.py=utf-8
