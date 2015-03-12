@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     # 在home_application(根应用)里开始开发你的应用的主要功能
     # (此处home_application可以改成你想要的名字，但千万不能和工程名重名，否则会引起django1.3的一些问题)
-    url(r'^', include('home_application.urls')),
+    url(r'^', include('home.urls')),
 )
 
 

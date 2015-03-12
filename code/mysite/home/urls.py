@@ -6,7 +6,7 @@
 # import from lib
 from django.conf.urls.defaults import patterns, include
 
-urlpatterns = patterns('home_application.views',
+urlpatterns = patterns('home.views',
     # 首页--your index
     (r'^$', 'home'),
 
