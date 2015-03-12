@@ -9,3 +9,6 @@ from django.http import HttpResponse
 def home(request):
     return render_mako_context(request, '/base.html', {})
 
+def test():
+    pass
+
