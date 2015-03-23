@@ -1,0 +1,109 @@
+<%inherit file='/base.html'/>
+
+<%block name='head_css'>
+	${parent.head_css()}
+	<link rel="stylesheet" href="${STATIC_URL}css/passport.css" type="text/css" charset="utf-8"/>
+	<script src="${STATIC_URL}js/passport.js" type="text/javascript" charset="utf-8"></script>
+</%block>
+
+<%block name='header'>
+	<%include file='logo_header.part'/>
+</%block>
+
+<%block name='content'>
+	<div class="content login_ad clear" style="background-image: url(https://img.vipstatic.com/upload/cmc/2015/03/18/183/05527ee4f0c54ae7b81291c02a213c77.jpg);">
+		<div class="regForm">
+			<form id="user_login_form" action="/passport/login/" method="post">
+				% if '__all__' in form.errors.viewkeys():
+					% for msg in form.errors['__all__']:
+						<p class="err_msg">${msg}</p>
+					% endfor
+				% endif
+				<div class="regHeaderTip">
+					欢迎回来！请登录
+				</div>
+				<p class="inputs">
+					% if 'username' in form.errors.viewkeys():
+						% if request.method == 'POST':
+						<input id="J_L_name" type="text" class="ipt error" name="username" 
+							value="${request.POST.get('username','')}">
+						% else:
+						<input id="J_L_name" type="text" class="ipt error" name="username">
+						% endif
+					% else:
+						% if request.method == 'POST':
+						<input id="J_L_name" type="text" class="ipt" name="username" 
+							value="${request.POST.get('username','')}">
+						% else:
+						<input id="J_L_name" type="text" class="ipt" name="username">
+						% endif
+					% endif
+					<label for="J_L_name" class="">登录名</label>
+				</p>
+				<p class="labels">
+					% if 'username' in form.errors.viewkeys():
+						% for msg in form.errors['username']:
+						<span class="err_msg">${msg}</span>
+						% endfor
+					% else:
+					<span class="err_msg"></span>
+					% endif
+				</p>
+				<p class="inputs">
+					% if 'password' in form.errors.viewkeys():
+						% if request.method == 'POST':
+						<input id="J_L_psw" type="password" class="ipt error" name="password" 
+							value="${request.POST.get('password','')}">
+						% else:
+						<input id="J_L_psw" type="password" class="ipt" name="password">
+						% endif
+					% else:
+						% if request.method == 'POST':
+						<input id="J_L_psw" type="password" class="ipt" name="password" 
+							value="${request.POST.get('password','')}">
+						% else:
+						<input id="J_L_psw" type="password" class="ipt" name="password">
+						% endif
+					% endif
+					<label for="J_L_psw" class="">密码</label>
+				</p>
+				<p class="labels">
+					% if 'password' in form.errors.viewkeys():
+						% for msg in form.errors['password']:
+						<span class="err_msg">${msg}</span>
+						% endfor
+					% else:
+					<span class="err_msg"></span>
+					% endif
+				</p>
+				
+				<p class="mb15">
+					<a id="btnLogin" href="javascript:void(0);" class="btn btnLoginDeep">登录</a>
+				</p>
+				<p class="mb50 clear mr70 lh14">
+					<span class="f-left"><span class="checkbox" data-for="remUser"> <i class="checked"></i> 记住用户名</span></span>
+					<span class="f-right"> <a href="###" class="f12 coffee" target="_self">忘记密码?</a> <span class="lgray f12">|</span> <a href="/passport/register/" class="regLink">免费注册</a></span>
+					<input name="remUser" type="hidden" value="1" data-type="checkbox">
+				</p>
+			</form>
+			<div class="linkBox">
+				<p class="f12 mb20 clear linkBoxTitle">
+					<span class="mr5 mb5 clear block">目前不支持其他网站账号登录！</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</%block>
+
+<script type="text/javascript" charset="utf-8">
+	$(function(){
+		$("#btnLogin").click(function(){
+			$("#user_login_form").submit();		
+		})
+		$("#J_L_name").change(check_blank);
+		$("#J_L_psw").change(check_blank);
+		
+		init_inputs();
+	})		
+	
+</script>

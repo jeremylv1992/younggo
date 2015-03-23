@@ -1,0 +1,66 @@
+<%inherit file='/base.html'/>
+
+<%block name='head_css'>
+	${parent.head_css()}
+	<link rel="stylesheet" href="${STATIC_URL}css/show/slide.css"/>
+	<link rel="stylesheet" href="${STATIC_URL}css/show/index.css" type="text/css" charset="utf-8"/>
+</%block>
+
+<%block name='header'>
+	<%include file='/header.part'/>
+</%block>
+
+<%block name='content'>
+	<div class="s_bg">
+		<%include file='/show/home_slide.part'/>
+		<div class="content_inner">
+			<div class="f-clearfix">
+				<div class="h_title">
+					<h2>每日特惠</h2>
+				</div>
+				<ul class="goodshot_list f-clearfix">
+					<li class="goodshot_item">
+						<a target="_blank" href="###"><img src="${STATIC_URL}images/test.jpg" class="goodshot_img"></a>
+						<div class="goodshot_bg trans200"></div>
+						<p class="goodshot_looking trans200">
+							<span class="good_title">中大狮</span><br/>
+							<span class="good_intro">吉祥狮贺新年</span><br/>
+							<span class="good_discount">买200送100</span>
+						</p>
+					</li>
+					<li class="goodshot_item">
+						<a target="_blank" href="###"><img src="${STATIC_URL}images/test.jpg" class="goodshot_img"></a>
+						<div class="goodshot_bg trans200"></div>
+						<p class="goodshot_looking trans200">
+							<span class="good_title">中大狮</span><br/>
+							<span class="good_intro">吉祥狮贺新年</span><br/>
+							<span class="good_discount">买200送100</span>
+						</p>
+					</li>
+					<li class="goodshot_item">
+						<a target="_blank" href="###"><img src="${STATIC_URL}images/test.jpg" class="goodshot_img"></a>
+						<div class="goodshot_bg trans200"></div>
+						<p class="goodshot_looking trans200">
+							<span class="good_title">中大狮</span><br/>
+							<span class="good_intro">吉祥狮贺新年</span><br/>
+							<span class="good_discount">买200送100</span>
+						</p>
+					</li>
+					<li class="goodshot_item">
+						<a target="_blank" href="###"><img src="${STATIC_URL}images/test.jpg" class="goodshot_img"></a>
+						<div class="goodshot_bg trans200"></div>
+						<p class="goodshot_looking trans200">
+							<span class="good_title">中大狮</span><br/>
+							<span class="good_intro">吉祥狮贺新年</span><br/>
+							<span class="good_discount">买200送100</span>
+						</p>
+					</li>
+				</ul>
+				<div class="goodshot_more">
+					<a href="###" target="_blank"><img src="${STATIC_URL}images/more.png" alt="更多优惠"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</%block>
+

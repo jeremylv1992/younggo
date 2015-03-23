@@ -1,0 +1,5 @@
+south execute "CREATE TABLE `passport_userprofile` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL UNIQUE, `gender` varchar(1) NOT NULL);" with params "[]"
+south execute "ALTER TABLE `passport_userprofile` ADD CONSTRAINT `user_id_refs_id_2fd89c61` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`);" with params "[]"
+south execute "SET FOREIGN_KEY_CHECKS=1;" with params "[]"
+south execute "CREATE TABLE `passport_userprofile` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` integer NOT NULL UNIQUE, `gender` varchar(1) NOT NULL);" with params "[]"
+south execute "ALTER TABLE `passport_userprofile` ADD CONSTRAINT `user_id_refs_id_2fd89c61` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`);" with params "[]"

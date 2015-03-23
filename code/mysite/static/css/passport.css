@@ -1,0 +1,187 @@
+.content {
+  	width: 1000px;
+  	height: 600px;
+  	background-repeat: no-repeat;
+  	margin: 10px auto;
+}
+
+.regForm {
+  	border: 0 none;
+  	float: right;
+  	margin: 40px 30px 0 0;
+  	width: 344px;
+  	border-right: dotted 1px #bfbfbf;
+  	display: inline;
+  	overflow: hidden;
+  	zoom: 1;
+}
+
+.regHeaderTip {
+  	padding-right: 70px;
+  	font-size: 14px;
+  	margin-bottom: 20px;
+  	overflow: hidden;
+  	zoom: 1;
+  	line-height: 16px;
+}
+
+.regHeaderTip a.hvLine {
+  	color: #CD2757;
+}
+
+.regForm p.inputs {
+  	position: relative;
+}
+
+.regForm .ipt {
+  	width: 260px;
+  	height: 33px;
+  	line-height: 33px;
+  	font-size: 16px;
+  	padding-left: 10px;
+  	border: 1px solid #bfbdbf;
+  	border-radius: 3px;
+  	background-color: #fff;
+}
+
+.regForm p.inputs label {
+  	position: absolute;
+  	left: 11px;
+  	line-height: 35px;
+  	height: 35px;
+  	color: #a6a6a6;
+  	cursor: text;
+  	font-size: 14px;
+}
+
+.regForm p.inputs label.hide {
+	display: none;
+}
+
+.regForm p.labels {
+  	height: 25px;
+  	line-height: 25px;
+  	font-size: 12px;
+}
+
+.labels {
+  	color: #CD2757;
+}
+
+.err_msg {
+	color: #CD2757;
+	display: block;
+}
+
+p.err_msg {
+	margin-bottom: 10px;
+}
+
+.auth-tips {
+  	position: absolute;
+  	background-color: #D6EDF4;
+  	border: 1px solid #9CBFEF;
+  	padding: 3px;
+  	width: 150px;
+  	z-index: 100;
+  	font: 12px '宋体';
+}
+
+.auth-tips-single {
+  	line-height: 30px;
+}
+
+.auth-tips .tips-arrow {
+  	position: absolute;
+  	background: url(../images/sprite-icons.png) no-repeat 0 -378px;
+ 	height: 5px;
+  	left: -5px;
+  	top: 45%;
+  	width: 5px;
+}
+
+.z-hide {
+  	display: none;
+}
+
+span.radio {
+  	overflow: hidden;
+  	zoom: 1;
+  	position: relative;
+  	padding-left: 19px;
+  	margin-right: 15px;
+  	color: #808080;
+  	font-size: 12px;
+  	line-height: 14px;
+}
+
+span.radio i {
+  	background: url(../images/sprite.png) 0 -340px;
+  	position: absolute;
+  	top: 50%;
+  	left: 0;
+  	margin-top: -7px;
+  	width: 13px;
+  	height: 13px;
+  	cursor: pointer;
+}
+
+.btn {
+  	width: 140px;
+  	height: 40px;
+  	cursor: pointer;
+  	line-height: 40px;
+  	background: url(../images/btns.png) 0 0 no-repeat;
+  	display: inline-block;
+  	text-align: center;
+  	font-size: 16px;
+  	letter-spacing: 2px;
+  	color: #fff;
+}
+
+span.checkbox {
+  	overflow: hidden;
+  	zoom: 1;
+  	position: relative;
+  	padding-left: 19px;
+  	color: #666;
+  	font-size: 12px;
+  	line-height: 16px;
+}
+
+span.checkbox i {
+  	background: url(../images/sprite.png) -18px -340px;
+  	position: absolute;
+  	top: 50%;
+  	left: 0;
+  	margin-top: -8px;
+  	width: 14px;
+  	height: 15px;
+  	cursor: pointer;
+}
+
+span.checkbox i.checked {
+  	background-position: -18px -359px;
+}
+
+.coffee {
+  	color: #666;
+}
+
+.lgray {
+  	color: #b3b3b3;
+}
+
+a.regLink {
+  	font-size: 12px;
+  	color: #f10180;
+  	position: relative;
+}
+
+.linkBox {
+  	color: #666;
+}
+
+.linkBoxTitle {
+  	line-height: 24px;
+}

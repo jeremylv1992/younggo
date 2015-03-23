@@ -49,7 +49,6 @@ def render_mako(template_name, dictionary={}, context_instance=None):
             or
                  render_mako('mako_temp.html',{},RequestContext(request，{'form':form}))
     '''
-
     mako_temp = mylookup.get_template(template_name)
     if context_instance:
         # RequestContext(request)

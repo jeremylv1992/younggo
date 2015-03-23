@@ -1,0 +1,18 @@
+<header class="header">
+	<nav class="top_nav">
+		<div id="" class="head_inner">
+			<div class="header_logo_dop">
+				<a target="_self" href="/"> 
+					<img src="${STATIC_URL}images/younggo_logo.jpg" alt="一家买卖情怀的网站"> </a>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<style type="text/css" media="screen">
+	.header {
+		overflow: hidden;
+  		zoom: 1;
+  		margin: 20px auto;
+	}
+</style>

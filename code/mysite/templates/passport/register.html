@@ -1,0 +1,121 @@
+<%inherit file='/base.html'/>
+
+<%block name='head_css'>
+	${parent.head_css()}
+	<link rel="stylesheet" href="${STATIC_URL}css/passport.css" type="text/css" charset="utf-8"/>
+	<script src="${STATIC_URL}js/passport.js" type="text/javascript" charset="utf-8"></script>
+</%block>
+
+<%block name='header'>
+	<%include file='logo_header.part'/>
+</%block>
+
+<%block name='content'>
+	<div class="content login_ad clear" style="background-image: url(https://img.vipstatic.com/upload/cmc/2015/03/18/183/05527ee4f0c54ae7b81291c02a213c77.jpg);">
+		<div class="regForm">
+			% if '__all__' in form.errors.viewkeys():
+				% for msg in form.errors['__all__']:
+					<p class="err_msg">${msg}</p>
+				% endfor
+			% endif
+			<div class="regHeaderTip">
+				<span class="f-right f12">已注册？<a href="/passport/login/" class="red hvLine">登录</a></span>
+			</div>
+			<form id="user_reg_form" action="/passport/register/" method="post" autocomplete="off">
+			<p class="inputs">
+				<%
+					err_class = 'error' if 'username' in form.errors.viewkeys() else ''
+					cache_val = request.POST.get('username','') if request.method == 'POST' else ''
+				%>
+				<input id="y_name" type="text" class="ipt ${err_class}" name="username" value="${cache_val}"> 
+				<label for="">用户名</label>
+			</p>
+			<p class="labels">
+				% if 'username' in form.errors.viewkeys():
+					% for msg in form.errors['username']:
+					<span class="err_msg">${msg}</span>
+					% endfor
+				% else:
+				<span class="err_msg"></span>
+				% endif
+			</p>
+			<div class="auth-tips auth-tips-single z-hide" for="">
+				<div class="tips-arrow"></div>
+				该值只能包含字母、数字和字符@/./+/-/_
+			</div>
+			<p class="inputs">
+				<%
+					err_class = 'error' if 'email' in form.errors.viewkeys() else ''
+					cache_val = request.POST.get('email','') if request.method == 'POST' else ''
+				%>
+				<input id="y_email" type="text" class="ipt ${err_class}" name="email" value="${cache_val}">
+				<label for="">邮箱</label>
+			</p>
+			<p class="labels">
+				% if 'email' in form.errors.viewkeys():
+					% for msg in form.errors['email']:
+					<span class="err_msg">${msg}</span>
+					% endfor
+				% else:
+				<span class="err_msg"></span>
+				% endif
+			</p>
+			<div class="auth-tips auth-tips-single z-hide" for="">
+				<div class="tips-arrow"></div>
+				请正确邮箱地址，格式如：jeremylv@gmail.com
+			</div>
+			<p class="inputs">
+				<%
+					err_class = 'error' if 'password1' in form.errors.viewkeys() else ''
+					cache_val = request.POST.get('password1','') if request.method == 'POST' else ''
+				%>
+				<input id="y_password" type="password" class="ipt ${err_class}" name="password1" 
+					value="${cache_val}" maxlength="20">
+				<label for="">密码</label>
+			</p>
+			<p class="labels">
+				% if 'password1' in form.errors.viewkeys():
+					% for msg in form.errors['password1']:
+					<span class="err_msg">${msg}</span>
+					% endfor
+				% else:
+				<span class="err_msg"></span>
+				% endif
+			</p>
+			<p class="inputs">
+				<%
+					err_class = 'error' if 'password2' in form.errors.viewkeys() else ''
+					cache_val = request.POST.get('password2','') if request.method == 'POST' else ''
+				%>
+				<input id="y_con_password" type="password" class="ipt ${err_class}" name="password2" 
+					value="${cache_val}" maxlength="20">
+				<label for="">确认密码</label>
+			</p>
+			<p class="labels"></p>
+			<p class="mb30">
+				<a id="btnRegister" href="javascript:void(0);" class="btn btnReg">注册</a>
+			</p>
+			<p class="inputs">
+				<span class="checkbox" data-for="agree"><i class="checked"></i> 我已阅读并接受YoungGo服务条款</a>。</span>
+				<input id="J_R_agree" name="agree" type="hidden" value="1" data-type="checkbox">
+			</p>
+			<p class="labels"><span class="err_msg"></span></p>
+		</form>
+		</div>
+	</div>
+</%block>
+
+<script type="text/javascript" charset="utf-8">
+	$(function(){
+		$("#btnRegister").click(function(){
+			$("#user_reg_form").submit();
+		})
+		
+		$("#y_name").change(check_blank);
+		$("#y_email").change(check_blank);
+		$("#y_password").change(check_blank);
+		$("#y_con_password").change(check_blank);
+
+		init_inputs();
+	})
+</script>

@@ -98,14 +98,23 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # OTHER 3rd Party App
     'south',
+    # login & logout module
+    'passport',
     # add your app here...
     # Note: 请注意在第一次syncdb时只加入south, 而不加自己的app，先syncdb初始化south的数据，
     # 然后再加入自己的app进行south操作!
     'home'
 )
 
+#===============================================================================
+# authentication module settings
+#===============================================================================
+LOGIN_URL = '/passport/login/'
+LOGOUT_URL = '/passport/logout/'
+LOGIN_REDIRECT_URL = '/'               # Redirect to home page after login
 
-
+# store additional infomation about user
+AUTH_PROFILE_MODULE = 'passport.UserProfile'
 
 #==============================================================================
 # logging

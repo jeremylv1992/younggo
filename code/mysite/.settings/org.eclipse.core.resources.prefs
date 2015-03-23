@@ -1,10 +1,17 @@
-#Wed Mar 11 23:35:12 CST 2015
+#Sun Mar 22 15:38:47 CST 2015
 eclipse.preferences.version=1
 encoding//common/context_processors.py=utf-8
 encoding//common/log.py=utf-8
 encoding//common/mymako.py=utf-8
+encoding//home/models.py=utf-8
 encoding//home/urls.py=utf-8
 encoding//home/views.py=utf-8
+encoding//passport/__init__.py=utf-8
+encoding//passport/decorators.py=utf-8
+encoding//passport/forms.py=utf-8
+encoding//passport/models.py=utf-8
+encoding//passport/urls.py=utf-8
+encoding//passport/views.py=utf-8
 encoding/settings.py=utf-8
 encoding/settings_global_dev.py=utf-8
 encoding/urls.py=utf-8

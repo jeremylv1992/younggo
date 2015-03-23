@@ -1,0 +1,15 @@
+<!-- 轮播横幅广告 -->
+<div class="focus_banner" >
+	<div class="focus_banner_con">
+		<ul class="fbc_list" style="">
+			<li class="fbc_list_item">
+				<a href="###" target="_self"><img src="${STATIC_URL}images/sysu_index.jpg" class="fbc_list_img" alt="中山大学预览图1"></a>
+			</li>
+		</ul>
+		<span class="fbc_btn fbc_btn_left"></span>
+		<span class="fbc_btn fbc_btn_right"></span>
+		<div class="fbc_trigger">
+			<span class="fbc_trigger_con"><i class="selected">•</i><i class="">•</i><i class="">•</i><i class="">•</i><i class="">•</i></span>
+		</div>
+	</div>
+</div>

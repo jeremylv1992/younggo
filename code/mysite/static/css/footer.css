@@ -1,0 +1,116 @@
+.ft_service_link {
+  	padding: 10px 0 20px;
+  	border-top: 1px solid #aaa;
+}
+
+.ft_help_list {
+  	margin: 0 auto;
+  	width: 1000px;
+  	white-space: nowrap;
+  	overflow: hidden;
+  	font-family: "Microsoft YaHei";
+  	font-weight: 900;
+  	color: #666;
+	font-size: 14px;
+}
+
+.ft_help_list a {
+	color: #666;
+}
+
+.ft_help_list a:hover {
+	color: #CD2757;
+}
+
+.ft_service_link dl {
+  	float: left;
+  	display: block;
+  	_display: inline;
+  	width: 170px;
+  	margin: 0 40px;
+}
+
+.ft_service_link dl dt {
+  	height: 40px;
+  	margin-bottom: 8px;
+  	padding: 0 10px;
+  	border-bottom: 1px solid #aaa;
+  	font-size: 18px;
+  	line-height: 40px;
+  	overflow: hidden;
+  	white-space: normal;
+}
+
+.ft_service_link dl dd {
+  	height: 26px;
+  	padding: 0 10px;
+  	line-height: 24px;
+  	overflow: hidden;
+  	white-space: normal;
+}
+
+.footer {
+  	width: 980px;
+  	height: auto;
+  	margin: 0 auto;
+  	margin-top: 10px;
+ 	clear: both;
+}
+
+.footer p {
+  	color: #666;
+  	text-align: center;
+  	text-indent: 0;
+  	line-height: 100%;
+  	margin: 15px 0;
+  	padding: 0;
+}
+
+.ft_footer_service {
+  	padding: 5px 0 4px;
+  	height: 50px;
+  	line-height: 40px;
+  	text-align: center;
+}
+
+.ft_footer_service a {
+ 	margin: 0 45px;
+  	color: #666;
+  	font-size: 14px;
+  	font-weight: bold;
+}
+
+
+.ft_footer_service span {
+  	background: url(../images/indexhead_sprite.png) no-repeat;
+  	display: inline-block;
+  	height: 50px;
+  	width: 55px;
+  	margin-right: 8px;
+  	vertical-align: middle;
+}
+
+.ft_footer_service a span.s1 {
+  	background-position: 0 -752px;
+}
+
+.ft_footer_service a span.s2 {
+  	background-position: -60px -752px;
+}
+
+.ft_footer_service a span.s3 {
+  	background-position: -130px -752px;
+}
+
+.ft_footer_service a span.s4 {
+  	background-position: -200px -752px;
+}
+
+.ft_footer_link a {
+  	color: #666;
+  	margin: 0 10px;
+}
+
+.ft_footer_link a:hover, .ft_footer_service a:hover {
+  	color: #CD2757;
+}
