@@ -1,0 +1,91 @@
+<%inherit file='/base.html'/>
+
+<%block name='head_css'>
+	${parent.head_css()}
+	<link rel="stylesheet" href="${STATIC_URL}css/show/store.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+</%block>
+
+<%block name='head_js'>
+	${parent.head_js()}
+	<script src="${STATIC_URL}js/show/store.js" type="text/javascript" charset="utf-8"></script>
+</%block>
+
+<%block name='header'>
+	<%namespace file='/header.part' import='*'/>
+	${dynamic_head('mall')}
+</%block>
+
+<%block name='content'>
+<div id="list_define">
+	<div class="wrap" id="J_display_wrap">
+		<!-- 品牌印象 -->
+		<div class="pro-impress clearfix">
+			<div class="pro-list-fav" id="J_pro_list_fav">
+				<div class="pro-fav-name">
+					<p id="store_info" data-val="${store.id}">
+						${store.name}
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- 多功能区 @todo-->
+		<div class="pro_choose" id="J_fileter_outFrame">
+			<div id="J_fileter_frame">
+				<!-- 分类区 -->
+				<div class="pro_search">
+					<!-- 更多add .pro-sortbar-show -->
+					<dl class="pro-sortbar-all pro-sortbar-category clearfix J-class" style="height: 46px;">
+						<dt class="pro-sortbar-name">
+							分类：
+						</dt>
+						<dd class="pro-sortbar-cnt">
+							<ul class="pro-sortbar-choice J-ctHeight">
+								<li>
+									<a href="/show-382299.html?q=0|0|0|0|0|1" id="J_firstsize_0" mars_sead="te_list_main_sort0" class="pro_selected active">全部(381) </a>
+								</li>
+								<li>
+									<a href="/show-382299.html?q=0|280|0|0|0|1" id="J_firstsize_280" mars_sead="te_list_main_sort" class=" J_firstsize">百褶裙(268) </a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<!-- 筛选区 -->
+		<div class="pro-list-oper">
+			<div class="pro-oper">
+				<div class="oper-hd-price">
+					<div class="oper-price-tp f-oper-default-secluded">
+						<a class="J_filter_param" target="_self" href="/show-382299.html?q=0|0|0|0|0|1">默认</a>
+					</div>
+					<div class="oper-price-tc ">
+						<p class="oper-price-txt">
+							价格<i class="pop_arrow"></i>
+						</p>
+						<div class="oper-price-pop">
+							<p>
+								<a class="J_filter_param" target="_self" href="/show-382299.html?q=0|0|0|0|4|1">价格由高到低</a>
+							</p>
+							<p>
+								<a class="J_filter_param" target="_self" href="/show-382299.html?q=0|0|0|0|3|1">价格由低到高</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 翻页导航工具栏 author:eason.chen@vipshop.com -->
+			<div id="J_page_special" class="page pro-paging">
+				<span class="page-total"><em class="page-nub">${total}</em>件商品</span>
+				<span><em class="page-nub">1</em>/1</span>
+				<span class="page-pre">&lt;</span>
+				<a class="page-next-txt" target="_self" mars_sead="te_list_main_head_p1" href="/show-382299.html?q=0|0|0|0|0|2">下一页&gt;</a>
+			</div>
+		</div><!-- 筛选区 end -->
+		<!-- 所有商品区 -->
+		<div class="pro_list clearfix">
+		</div>
+		
+	</div>
+</div>
+</%block>

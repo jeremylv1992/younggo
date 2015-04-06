@@ -206,6 +206,67 @@ html .f-hide {
   	zoom: 1;
 }
 
-.regForm .ipt.error {
-  	border-color: #f20266;
+.clearfix{
+	
+}
+
+.clearfix:after {
+  	content: '.';
+  	height: 0;
+  	display: block;
+  	clear: both;
+  	visibility: hidden;
+}
+.gray {
+  	color: gray;
+}
+
+.deep_red {
+  	color: #CD2757;
+}
+
+
+.ui-btn-big, .ui-btn-large, .ui-btn-nor, .ui-btn-medium, .ui-btn-small, .ui-btn-mini {
+  	display: inline-block;
+  	border-radius: 3px;
+  	text-decoration: none;
+  	text-align: center;
+  	vertical-align: top;
+  	-webkit-transition: .3s;
+  	transition: .3s;
+  	cursor: pointer;
+  	_overflow-y: hidden;
+}
+
+.ui-btn-big, .ui-btn-large {
+  	min-width: 72px;
+  	_width: 72px;
+  	padding: 0 35px;
+  	font: 18px/44px tahoma,arial,Hiragino Sans GB,WenQuanYi Micro Hei,'\5FAE\8F6F\96C5\9ED1','\5B8B\4F53',sans-serif;
+  	_line-height: 48px;
+  	height: 44px;
+}
+
+.ui-btn1, .ui-btn-primary {
+  	background-color: #CD2757;
+  	border: 1px solid #CD2757;
+}
+
+.ui-btn1:hover, .ui-btn-primary:hover {
+  	background-color: rgba(205, 39, 87, 0.9);
+  	border-color: rgba(205, 39, 87, 0.9);
+}
+
+.ui-btn1, .ui-btn-primary, .ui-btn1:hover, .ui-btn-primary:hover, .ui-btn1:active, .ui-btn-primary:active {
+  	color: #fff;
+}
+
+.ui-btn-loading, button.ui-btn-loading {
+  	padding: 0;
+  	overflow: hidden;
+}
+
+
+.ui-btn-big .if-shopping-bag, .ui-btn-large .if-shopping-bag {
+  	font-size: 22px;
 }

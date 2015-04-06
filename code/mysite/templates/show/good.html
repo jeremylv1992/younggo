@@ -1,0 +1,146 @@
+<%inherit file='/base.html'/>
+
+<%block name='head_css'>
+	${parent.head_css()}
+	<link rel="stylesheet" href="${STATIC_URL}css/show/good.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+</%block>
+
+<%block name='head_js'>
+	${parent.head_js()}
+	<script src="${STATIC_URL}js/show/good.js" type="text/javascript" charset="utf-8"></script>
+</%block>
+
+<%block name='header'>
+	<%namespace file='/header.part' import='*'/>
+	${dynamic_head('mall')}
+</%block>
+
+<%block name='content'>
+<div class="FW-wrap fwr">
+	<div class="FW-product clearfix">
+		<!-- 产品位置模块 -->
+		<div class="M-class">
+			<a href="/show/">商城&nbsp;&gt;&nbsp;</a><a href="/show/${store.id}/">${store.name}</a>&nbsp;&gt;&nbsp;${good.name}
+		</div>
+		<!-- 产品图片模块 -->
+		<div class="M-pic" id="J-mer-ImgReview">
+			<div class="pic-sliderwrap">
+				<div class="show-midpic hidden" style="display: block;">
+					<a href="${STATIC_URL}images/640" class="J-mer-bigImgZoom" rel="undefined" title="" style="outline-style: none; text-decoration: none;">
+					<div class="zoomPad">
+						<img src="${STATIC_URL}images/640" width="383" height="483" alt="" title="" style="opacity: 1;">
+						<div class="zoomWindow" style="position: absolute; z-index: 5001; cursor: default; left: 0px; top: 0px; display: none;">
+							<div class="zoomWrapper" style="border-width: 1px; width: 383px; cursor: crosshair;">
+								<div class="zoomWrapperTitle" style="width: 100%; position: absolute; display: none;"></div>
+								<div class="zoomWrapperImage" style="width: 100%; height: 483px;">
+									<img src="${STATIC_URL}images/640" style="position: absolute; border: 0px; display: block; left: 0px; top: -168.354037267081px;">
+								</div>
+							</div>
+						</div>
+					</div> </a>
+					<em class="icon-a"></em>
+				</div>
+			</div>
+			<div class="pic-slider" id="J-sImgSlide-wrap">
+				<span class="pic-slider-up switchable-first" id="J-slider-lef" mars_sead="m_te_goods_buy_next"> <em class="arrow-out"><em class="arrow-in"></em></em> </span>
+				<div class="pic-slider-list">
+					<div id="J-sImg-wrap" style="width: 390px; margin-left: 0px;">
+						<div class="pic-slider-items J-picSlider-items" mars_sead="m_te_goods_buy_pic6_img">
+							<img src="${STATIC_URL}images/640" width="57" height="73" alt="" class="J-mer-smallImg">
+						</div>
+					</div>
+				</div>
+				<span class="pic-slider-down" id="J-slider-rig" mars_sead="m_te_goods_buy_next"> <em class="arrow-out"><em class="arrow-in"></em></em> </span>
+			</div>
+		</div>
+		<!-- 产品图片模块 end -->
+		<!-- 产品信息模块 -->
+		<div class="M-productInfo">
+			<div class="pi-title-box clearfix">
+				<div class="pib-title">
+					<p class="pib-title-class">
+						<a href="/show/${store.id}/" target="_blank">${store.name} </a>
+					</p>
+					<p class="pib-title-detail">
+						${good.name}
+					</p>
+				</div>
+			</div>
+			<div class="pi-price-box">
+				<span class="pbox-price"><i class="pbox-yen">¥</i><em>${good.min_price}</em></span>
+			</div>
+			<div class="pi-attr-box" id="J-proData-box">
+				<form id="J-cartAdd-frm" class="cartAdd-form" method="post" action="http://cart.vip.com/te2/add.php">
+					<dl class="color">
+						<dt class="color-name">
+							颜色：
+						</dt>
+						<dd class="color-list">
+							<ul>
+								<li class="color-list-item">
+									<a id="J-colorItem-50551455" href="/detail-385812-50551455.html" title="黑色翻领休闲短袖T恤" class=""> <img class="fl" src="http://a.vpimg3.com/upload/merchandise/385812/H-7132217030099-1_2.jpg" data-original="http://a.vpimg3.com/upload/merchandise/385812/H-7132217030099-1_2.jpg" width="34" height="43" alt="黑色翻领休闲短袖T恤" mars_sead="m_te_goods_buy_color_check" style="display: block;"> <span class="i-select"></span></a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="i-size clearfix J-sizeArea-wrap " id="J-sizeArea-wrap">
+						<dt class="size-name">
+							尺码：
+						</dt>
+						<dd class="size-list">
+							<ul>
+								<li class="size-list-item J-sizeID" id="J-cartAdd-sizeID-130616012" data-size-name="56" data-hover="size-list-item-hover" data-id="130616012" mars_sead="m_te_goods_buy_size_check" style="z-index: 1;">
+									<span class="size-list-item-name">56</span>
+									<span class="i-select"></span>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="i-num clearfix" id="J-num-select">
+						<dt class="num-name">
+							数量：
+						</dt>
+						<dd class="i-notice-msg J-num-tips"></dd>
+						<dd class="num-box">
+							<span class="num-reduce num-reduce-disabled J-num-act-reduce"></span>
+							<em class="num-input J-pro-num-txt">1</em>
+							<span class="num-add J-num-act-add"></span>
+						</dd>
+						<dd class="num-msg hidden" id="J-proStock-type"></dd>
+					</dl>
+					<div class="i-button clearfix">
+						<div id="J-button-box" class="button-box">
+							<!-- loading状态加 .z-ui-btn-loading -->
+							<a href="javascript:;" class="ui-btn-large ui-btn-primary ui-btn-loading" id="J-cartAdd-submit"> 
+								<span class="ui-btn-loading-before">加入购物袋 </span> 
+								<span class="ui-btn-loading-after"><span class="ui-btn-txt"></span> </span> 
+							</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="f-clearfix"></div>
+	</div>
+	
+	<!-- 商品详情 -->
+	<div id="J-FW-detail" class="FW-detail J-data-module">
+		<div class="M-detail">
+			<!-- 终端页模块导航 -->
+			<div class="M-detailTop" id="J-topbar">
+				<ul class="dt-list">
+					<li>
+						<a href="javascript:void(0);" class="dt-list-item J-topbar-tabs" >商品详情</a>
+					</li>
+				</ul>
+			</div>
+			<div class="M-detailCon">
+				<!-- 商品尺码(新) -->
+				商家自己编辑。。。。
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</%block>

@@ -1,11 +1,19 @@
-#Sun Mar 22 15:38:47 CST 2015
+#Sat Apr 04 17:38:07 CST 2015
 eclipse.preferences.version=1
+encoding//common/__init__.py=utf-8
 encoding//common/context_processors.py=utf-8
 encoding//common/log.py=utf-8
+encoding//common/model2json.py=utf-8
 encoding//common/mymako.py=utf-8
+encoding//home/__init__.py=utf-8
+encoding//home/admin.py=utf-8
+encoding//home/good_views.py=utf-8
 encoding//home/models.py=utf-8
+encoding//home/school_views.py=utf-8
+encoding//home/store_views.py=utf-8
 encoding//home/urls.py=utf-8
 encoding//home/views.py=utf-8
+encoding//home/websocket_views.py=utf-8
 encoding//passport/__init__.py=utf-8
 encoding//passport/decorators.py=utf-8
 encoding//passport/forms.py=utf-8

@@ -118,3 +118,7 @@ def render_json(dictionary={}):
                       'message': dictionary,
                       }
     return HttpResponse(json.dumps(dictionary))  # , mimetype='application/json'
+
+
+
+    

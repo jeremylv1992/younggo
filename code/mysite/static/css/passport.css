@@ -185,3 +185,8 @@ a.regLink {
 .linkBoxTitle {
   	line-height: 24px;
 }
+
+
+.regForm .ipt.error {
+  	border-color: #f20266;
+}

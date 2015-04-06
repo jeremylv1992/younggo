@@ -1,0 +1,42 @@
+<script type="text/x-mustache" id="area_tmp">
+	<tr>
+	<td><a class = "J_select_item" href="/school/locate/?school_id={{id}}"> {{name}} </a></td>
+	</tr>
+</script>
+
+<script type="text/x-mustache" charset="utf-8" id="store_item">
+<li class="brand_new">
+	<div class="act-item-wrap" data-bid="382299">
+		<div class="b_f_con_img_box">
+			<a class="b_f_item_c" target="_blank" href="/show/{{id}}/"> 
+			<img width="226" height="288" class="" alt="" src="${STATIC_URL}images/store.jpg"> </a>
+		</div>
+		<div class="b_f_info">
+			<p class="b_f_brand">
+				<a href="###" target="_blank" href="/show/{{id}}/">{{name}}</a>
+			</p>
+			<p class="b_f_intro fwr">
+				{{summary}}
+			</p>
+		</div>
+	</div>
+</li>
+</script>
+
+<script type="text/x-mustache" charset="utf-8" id="good_item">
+<dl class="J_pro_items" id="J_pro_50490864" data-hover="dl_hover">
+	<dt class="pro_list_pic">
+		<a href="/show/{{store_id}}/{{id}}/" title="{{name}}" target="_blank"> <img class="J_first_pic" width="235" height="297" alt="{{name}}" src="${STATIC_URL}images/640"></a>
+	</dt>
+	<dd class="brand_tit gray">
+		{{store}}
+	</dd>
+	<dd class="pro_list_tit">
+		<a href="/show/{{store_id}}/{{id}}/" target="_blank">{{name}}</a>
+	</dd>
+	<dd class="pro_list_data">
+		<span class="deep_red"><em>¥{{min_price}}</em></span>
+	</dd>
+</dl>
+</script>
+

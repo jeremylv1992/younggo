@@ -1,0 +1,96 @@
+.hys_wrapper {
+  	width: 100%;
+  	overflow: hidden;
+  	position: relative;
+  	background: #f8f8f8 url(../../images/index_bg.jpg) no-repeat top center;
+}
+
+.hys_box {
+  	margin: 0 auto;
+  	width: 1000px;
+  	min-height: 413px;
+  	overflow: hidden;
+  	position: relative;
+}
+
+.hys_list {
+  	float: left;
+  	width: 100%;
+  	display: block;
+  	overflow: hidden;
+  	margin-top: 30px;
+}
+
+.hys_list ul {
+  	display: block;
+  	overflow: hidden;
+  	width: 1000px;
+  	list-style: none;
+  	margin: 0 auto;
+  	padding: 0;
+}
+
+.hys_list ul li {
+  	display: block;
+  	float: left;
+  	list-style: none;
+}
+
+.brand_new {
+  	width: 226px;
+  	height: 364px;
+  	float: left;
+  	margin: 0px 0px 19px 18px;
+  	overflow: hidden;
+}
+
+.brand_new:hover {
+  	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.b_f_con_img_box {
+  	position: relative;
+  	width: 226px;
+  	height: 288px;
+}
+
+.b_f_item_c {
+  	display: block;
+  	width: 226px;
+  	height: 288px;
+}
+
+.hys_box img {
+  	border: 0;
+  	float: left;
+  	display: block;
+}
+
+.b_f_info {
+  	width: 226px;
+  	height: 76px;
+  	overflow: hidden;
+  	position: relative;
+  	background: #fff;
+}
+
+.b_f_brand {
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+  	height: 15px;
+  	overflow: hidden;
+  	text-align: left;
+  	padding: 15px 0 5px 5px;
+  	width: 163px;
+}
+
+.b_f_intro {
+  	font-size: 12px;
+  	text-align: left;
+  	width: 163px;
+  	padding-left: 5px;
+}
+
+.fwr {
+  	font-family: \5FAE\8F6F\96C5\9ED1,sans-serif;
+}

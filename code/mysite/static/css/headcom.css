@@ -88,7 +88,7 @@
 }
 
 .sel_area_btn {
-	width: 100px;
+	min-width: 100px;
 	height: 20px;
 	padding: 0 5px;
 	border: 1px solid #ddd;
@@ -201,4 +201,83 @@
 .main_nav_link li a:hover {
   	background-color: #CBCC4A;
   	color: #fff;
+}
+
+
+.sel_area_box {
+	display: none;
+  	position: absolute;
+  	top: 28px;
+  	left: -80px;
+  	width: 252px;
+  	padding: 4px 10px 20px;
+  	border: 1px solid #cdcdcd;
+  	background-color: #fff;
+  	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
+  	box-shadow: 0 0 3px rgba(0,0,0,.2);
+  	z-index: 10;
+  	display: none;
+}
+
+.selected .sel_area_box {
+	display: block;
+}
+
+.top_nav_tool .ico_arw, .sel_area_box .ico_arw {
+  	width: 9px;
+  	height: 6px;
+  	overflow: hidden;
+  	position: absolute;
+  	top: -6px;
+  	left: 68px;
+  	background: url(//s2.vipstatic.com/img/te/3/te_ico_png.png?f24e7dd8) no-repeat -106px -31px;
+}
+
+.sel_area_box .ico_arw {
+  	left: 133px;
+}
+
+.sab_tit {
+  	margin: 0 0 14px;
+  	padding-left: 4px;
+  	height: 30px;
+  	line-height: 30px;
+  	border-bottom: 1px dotted #666;
+  	font-weight: 700;
+  	text-align: left;
+  	color: #666;
+}
+
+.sab_table {
+  	border-collapse: collapse;
+  	border-spacing: 0;
+  	width: 100%;
+  	color: #343434;
+}
+
+.sab_table th {
+  	height: 26px;
+  	width: 16px;
+  	text-align: center;
+  	font-weight: 100;
+}
+
+.sab_table td {
+  	text-align: left;
+}
+
+.sab_table a {
+  	cursor: pointer;
+  	padding: 2px 5px;
+  	color: #676767;
+}
+
+.sab_table a:hover {
+	color: #CD2757;
+}
+
+.sab_table a.selected {
+  	background-color: #CD2757;
+  	color: #fff;
+  	text-decoration: none;
 }

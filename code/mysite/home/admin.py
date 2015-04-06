@@ -1,12 +1,7 @@
 # coding=utf-8
+from django.contrib import admin
+from home.models import School, Store, Good
 
-# import from apps here
-
-
-# import from lib
-#===============================================================================
-# from django.contrib import admin
-# from apps.__.models import aaaa
-# 
-# admin.site.register(aaaa)
-#===============================================================================
+admin.site.register(School)
+admin.site.register(Store)
+admin.site.register(Good)

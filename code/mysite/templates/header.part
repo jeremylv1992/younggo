@@ -1,3 +1,8 @@
+<%def name='dynamic_head(tag)'>
+<%
+	home = 'current' if tag == 'home' else ''
+	mall = 'current' if tag == 'mall' else ''	
+%>
 <header class="header">
 	<nav class="top_nav">
 		<div id="" class="head_inner">
@@ -34,12 +39,24 @@
 				</li>
 			</ul>
 			<div class="header_logo_dop">
-				<a target="_blank" href="xxx"> 
+				<a target="_self" href="/"> 
 					<img src="${STATIC_URL}images/younggo_logo.jpg" alt="一家买卖情怀的网站"> </a>
 			</div>
 			<div class="sel_area">
                 <div class="sel_area_change" id="">
-                    <div class="sel_area_btn"><i class="sel_area_arrow"></i><span>中山大学</span></div>
+                    <div class="sel_area_btn">
+                    	<i class="sel_area_arrow"></i><span>${school.name}</span>
+                    </div>
+					<div class="sel_area_box" id="J_area_content" style="">
+						<i class="ico_arw"></i>
+						<p class="sab_tit">
+							请选择感兴趣的学校
+						</p>
+						<table class="sab_table" mars_sead="home_top_zone_link">
+							<tbody>
+							</tbody>
+						</table>
+					</div>
                 </div>
             </div>
             <div class="header_search">
@@ -55,7 +72,10 @@
 		<div class="head_inner">
 			<ul class="main_nav_link">
 				<li>
-					<a href="###" class="current" >首页</a>
+					<a href="/" class="${home}" >首页</a>
+				</li>
+				<li>
+					<a href="/show/" class="${mall}">进入商城</a>
 				</li>
 				<li>
 					<a href="###">每日优惠</a>
@@ -76,3 +96,5 @@
 		</div>
 	</nav>
 </header>
+
+</%def>

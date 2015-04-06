@@ -1,0 +1,27 @@
+<%inherit file='/base.html'/>
+
+<%block name='head_css'>
+	${parent.head_css()}
+	<link rel="stylesheet" href="${STATIC_URL}css/show/mall.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+</%block>
+
+<%block name='head_js'>
+	${parent.head_js()}
+	<script src="${STATIC_URL}js/show/mall.js" type="text/javascript" charset="utf-8"></script>
+</%block>
+
+<%block name='header'>
+	<%namespace file='/header.part' import='*'/>
+	${dynamic_head('mall')}
+</%block>
+
+<%block name='content'>
+<div class="hys_wrapper">
+	<div class="hys_box">
+		<div class="act-brand-list hys_list">
+			<ul class="">
+			</ul>
+		</div>
+	</div>
+</div>
+</%block>

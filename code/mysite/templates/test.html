@@ -1,0 +1,23 @@
+<html>
+	<head>
+	  <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	  <title>websocket</title>
+	  <script src="${STATIC_URL}js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body id="test" onload="">
+		<input type="text" name="msg" value="" id="msg"/>
+		<button id="send">发送</button>
+		<textarea name="reply" rows="8" cols="40"></textarea>
+	</body>	
+	<script type="text/javascript" charset="utf-8">
+		var ws = new WebSocket("ws://localhost:8000/websocket/lower_case/");
+		$("#send").click(function(){
+			var msg = $("#msg").val();
+			// ws.send(msg);
+			var url = '/websocket/lower_case/';
+			$.get(url,{message:msg},function(res){
+				console.log(res);
+			})
+		})
+	</script>
+</html>

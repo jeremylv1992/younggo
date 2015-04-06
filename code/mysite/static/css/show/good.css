@@ -1,0 +1,400 @@
+.i-select, .sli-chance-icon, .i-notice-msg, .num-reduce, .num-add, .btn-msg, .btn-cart, .pso-submit, .pi-promise-item, .sas-item-close, .sa-close, .selector-txt, .share-sn, .share-tx, .share-kj, .share-rr, .share-db, .share-kx, .i-customer, .i-phone, .i-arrow-down, .iv-close, .btn-waitlist, .btn-popup-waitlist, .waitlist-pop-close, .busy-pop-close {
+  background: url(//s2.vipstatic.com/img/te/detail_imgs_new.png?45c6822c) no-repeat;
+}
+
+.fwr {
+  	font-family: \5FAE\8F6F\96C5\9ED1,sans-serif;
+}
+
+.FW-wrap {
+  	width: 1000px;
+  	margin: 0 auto;
+}
+
+.FW-product {
+  	position: relative;
+  	margin-bottom: 50px;
+}
+
+.M-class {
+  	width: 1000px;
+  	padding: 11px 0;
+}
+
+.M-pic {
+  	width: 383px;
+ 	height: 562px;
+  	float: left;
+  	position: relative;
+}
+
+.pic-sliderwrap {
+  	width: 383px;
+  	height: 483px;
+  	position: relative;
+  	z-index: 99;
+}
+
+.show-midpic {
+  	width: 383px;
+  	height: 483px;
+  	position: relative;
+}
+
+.zoomPad {
+  	position: relative;
+  	float: left;
+  	z-index: 99;
+  	cursor: crosshair;
+}
+
+.zoomWindow {
+  	position: absolute;
+  	left: 0;
+  	top: 0;
+  	background: #FFF;
+  	z-index: 6000;
+  	width: 383px;
+  	height: 483px;
+  	z-index: 10000;
+  	z-index: 110;
+}
+
+.sold-tag, .icon-a {
+  	background: url(//s2.vipstatic.com/img/te/detail_imgs_new.png?45c6822c) no-repeat;
+}
+
+.icon-a {
+  	background-position: -50px 0;
+  	position: absolute;
+  	width: 20px;
+  	height: 20px;
+  	bottom: 0;
+  	right: 0;
+  	display: block;
+  	z-index: 100;
+}
+
+.pic-slider {
+  	position: relative;
+  	width: 383px;
+  	height: 79px;
+  	margin-right: 1px;
+  	overflow: hidden;
+}
+
+.pic-slider-up, .pic-slider-down {
+  	float: left;
+  	width: 29px;
+  	height: 79px;
+  	z-index: 21;
+  	cursor: pointer;
+  	text-align: center;
+}
+
+.switchable-first, .switchable-last {
+  	cursor: default;
+}
+
+.arrow-out, .arrow-in {
+  	display: inline-block;
+  	font-size: 0;
+  	width: 0;
+  	height: 0;
+}
+
+.arrow-out {
+  	position: relative;
+  	border-width: 10px 10px 10px 0;
+  	border-color: transparent #999 transparent transparent;
+  	border-style: solid;
+  	margin-top: 30px;
+}
+
+.switchable-first .arrow-out {
+  	border-color: transparent #ccc transparent transparent;
+}
+
+.arrow-in {
+  	position: absolute;
+  	right: -10px;
+  	top: -5px;
+  	border-width: 5px 5px 5px 0;
+  	border-color: transparent #fcfafd transparent transparent;
+  	border-style: solid;
+}
+
+.pic-slider-down .arrow-out {
+  	border-width: 10px 0 10px 10px;
+  	border-color: transparent transparent transparent #999;
+  	border-style: solid;
+}
+
+.pic-slider-down .arrow-in {
+  	left: -10px;
+  	border-width: 5px 0 5px 5px;
+  	border-color: transparent transparent transparent #fcfafd;
+ 	border-style: solid;
+}
+
+.pic-slider-list {
+  	float: left;
+  	width: 325px;
+  	height: 79px;
+  	overflow: hidden;
+}
+
+
+.pic-slider-items {
+  	width: 57px;
+  	height: 73px;
+  	padding: 4px;
+  	float: left;
+  	cursor: pointer;
+  	overflow: hidden;
+  	position: relative;
+}
+
+.pic-slider-items img {
+  	position: absolute;
+  	z-index: 10;
+  	vertical-align: bottom;
+}
+
+.M-productInfo {
+  	width: 563px;
+  	float: left;
+  	padding-left: 50px;
+  	position: relative;
+  	z-index: 100;
+}
+
+.pib-title {
+  	float: left;
+  	width: 100%;
+  	color: #4d4d4d;
+  	padding-bottom: 3px;
+  	border-bottom: 1px dotted #b3b3b3;
+}
+
+.pib-title-class {
+  	width: 340px;
+  	overflow: hidden;
+  	white-space: nowrap;
+  	text-overflow: ellipsis;
+  	font-size: 12px;
+  	color: #777578;
+  	line-height: 22px;
+}
+
+.pib-title-detail {
+  	font-size: 15px;
+  	color: #4e4e4e;
+  	font-weight: 700;
+  	max-height: 40px;
+  	overflow: hidden;
+  	line-height: 20px;
+}
+
+.pi-price-box {
+  	padding: 23px 0 13px;
+  	position: relative;
+}
+
+.pbox-price {
+  	display: inline-block;
+  	font-size: 30px;
+  	color: #f43499;
+}
+
+.pbox-yen {
+  	font-size: 20px;
+}
+
+.pi-attr-box {
+  	min-height: 347px;
+}
+
+.color {
+  	overflow: hidden;
+  	padding-top: 12px;
+}
+
+.color-name {
+  	line-height: 47px;
+}
+
+.pi-attr-box dt {
+  	float: left;
+  	font-size: 12px;
+  	width: 62px;
+  	text-align: left;
+  	color: gray;
+  	line-height: 25px;
+}
+
+.color-list {
+  	float: left;
+  	width: 340px;
+}
+
+.color-list-item {
+  	float: left;
+  	width: 38px;
+  	height: 47px;
+  	position: relative;
+  	margin: 0 15px 9px 0;
+}
+
+.color-list-item a {
+  	display: inline-block;
+  	width: 34px;
+  	height: 43px;
+  	padding: 1px;
+  	border: 1px solid #b5b5b5;
+}
+
+.i-size {
+  	padding: 11px 11px 1px;
+  	position: relative;
+  	z-index: 3;
+  	margin-left: -10px;
+  	zoom: 1;
+}
+
+.size-list {
+  	float: left;
+  	max-width: 360px;
+  	_width: 360px;
+  	position: relative;
+  	zoom: 1;
+}
+
+.size-list-item {
+  	float: left;
+  	position: relative;
+  	min-width: 52px;
+  	max-width: 304px;
+  	_width: 52px;
+  	height: 26px;
+  	font-size: 12px;
+  	padding: 1px 10px;
+  	margin: 0 10px 10px 0;
+  	border: 1px solid #b5b5b5;
+  	text-align: center;
+  	line-height: 26px;
+  	cursor: pointer;
+  	background-color: #fff;
+}
+
+.size-list-item-name {
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+  	max-width: 304px;
+  	display: inline-block;
+}
+
+.i-select {
+  	position: absolute;
+  	bottom: 0;
+  	right: 0;
+  	width: 17px;
+  	height: 16px;
+  	background-position: -50px -100px;
+  	display: none;
+}
+
+.i-num {
+  	padding: 11px 10px;
+  	position: relative;
+  	height: 30px;
+  	margin: -1px 0 0 -10px;
+  	padding-bottom: 10px;
+}
+
+.num-box {
+  	float: left;
+  	position: relative;
+  	height: 28px;
+  	border: 1px solid #b3b3b3;
+}
+
+.num-reduce, .num-input, .num-add {
+  	float: left;
+  	width: 24px;
+  	height: 28px;
+}
+
+.num-reduce {
+  	background-position: -100px -150px;
+  	cursor: pointer;
+}
+
+.num-reduce-disabled {
+  	background-position: 0 -150px;
+  	cursor: default;
+}
+
+.num-input {
+  	text-align: center;
+  	line-height: 28px;
+  	width: 28px;
+  	background-color: #fff;
+}
+
+.num-add {
+  	background-position: -50px -150px;
+  	cursor: pointer;
+}
+
+.i-button {
+  	min-height: 35px;
+}
+
+.button-box {
+  	float: left;
+  	width: 200px;
+  	height: 50px;
+  	overflow: hidden;
+}
+
+.button-box .ui-btn-large {
+  	width: 198px;
+}
+
+.FW-info, .FW-detail, .FW-question {
+  	margin-bottom: 30px;
+}
+
+.M-detailTop {
+  	height: 28px;
+  	border-top: 2px solid #d0cfd1;
+  	background-color: #eae8eb;
+}
+
+.dt-list {
+  	position: relative;
+  	top: -2px;
+}
+
+.dt-list li {
+  	float: left;
+}
+
+.dt-list-item {
+  	display: inline-block;
+  	width: 100px;
+  	height: 28px;
+  	line-height: 28px;
+  	text-align: center;
+  	font-size: 14px;
+  	color: #333;
+  	border-top: 2px solid #d0cfd1;
+  	border-right: 1px solid #fff;
+}
+
+.M-detailCon {
+  	padding-top: 30px;
+  	font-size: 14px;
+}

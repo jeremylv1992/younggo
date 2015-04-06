@@ -34,7 +34,7 @@ PYTHON_BIN = os.path.dirname(sys.executable)
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media/')
 MEDIA_URL = '/media/' 
 STATIC_URL = '/static/'
-ADMIN_MEDIA_PREFIX = '/static/lib/django-1.3.1/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
@@ -87,6 +87,7 @@ MIDDLEWARE_CLASSES = (
 #    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+#    'django_websocket.middleware.WebSocketMiddleware',
 )
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -105,6 +106,11 @@ INSTALLED_APPS = (
     # 然后再加入自己的app进行south操作!
     'home'
 )
+
+#===============================================================================
+# websocket config
+#===============================================================================
+WEBSOCKET_ACCEPT_ALL = True
 
 #===============================================================================
 # authentication module settings

@@ -20,10 +20,6 @@ urlpatterns = patterns('',
 if settings.RUN_MODE=='DEVELOP':
     import os, django
     urlpatterns += patterns('',
-        # ADMIN_MEDIA_PREFIX , 注意，这个url不要删除，否则开发的时候，进入admin时候，不会显示样式，也不会加载对应的js
-        url(r'^static/lib/django-1.3.1/(?P<path>.*)$', 'django.views.static.serve', {
-            'document_root': os.path.join(django.__path__[0], 'contrib/admin/media/'),
-        }),
         # media
         url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
