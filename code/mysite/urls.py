@@ -16,6 +16,11 @@ urlpatterns = patterns('',
     url(r'^', include('home.urls')),
 )
 
+if settings.WEBSOCKET_SWITCH == 'ON':
+    urlpatterns += patterns('',
+        # websocket-based biliteral communication
+        url(r'^chat/', include('chatserver.urls')),
+    )
 
 if settings.RUN_MODE=='DEVELOP':
     import os, django

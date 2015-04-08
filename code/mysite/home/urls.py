@@ -21,8 +21,3 @@ urlpatterns += patterns('home.school_views',
     url(r'^school/locate/$', 'locate_school'),
     url(r'^school/get_school_list/$', 'get_school_list'),
 )
-
-urlpatterns += patterns('home.websocket_views',
-    url(r'^websocket/page/$', 'test_page'),
-    url(r'^websocket/lower_case/$', 'lower_case'),
-)

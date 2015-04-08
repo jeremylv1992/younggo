@@ -12,7 +12,15 @@ TEMPLATE_DEBUG = DEBUG
 
 # 开发环境的配置
 RUN_MODE = 'DEVELOP'
-from settings_global_dev import *
+
+# switch the settings according to the different systems
+import platform
+if platform.system() == 'Windows':
+    from settings_global_win import *
+    WEBSOCKET_SWITCH = 'OFF'
+elif platform.system() == 'Linux':
+    from settings_global_linux import *
+    WEBSOCKET_SWITCH = 'ON'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'e#_n#(c1#9x-16o6ajfo1@i(s*7pp4d)3n#b(-r(xq5f2rq*9t'
@@ -87,7 +95,6 @@ MIDDLEWARE_CLASSES = (
 #    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-#    'django_websocket.middleware.WebSocketMiddleware',
 )
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -104,13 +111,9 @@ INSTALLED_APPS = (
     # add your app here...
     # Note: 请注意在第一次syncdb时只加入south, 而不加自己的app，先syncdb初始化south的数据，
     # 然后再加入自己的app进行south操作!
-    'home'
+    'home',
 )
 
-#===============================================================================
-# websocket config
-#===============================================================================
-WEBSOCKET_ACCEPT_ALL = True
 
 #===============================================================================
 # authentication module settings
@@ -121,6 +124,34 @@ LOGIN_REDIRECT_URL = '/'               # Redirect to home page after login
 
 # store additional infomation about user
 AUTH_PROFILE_MODULE = 'passport.UserProfile'
+
+# djanog-websocket-redis conf
+if WEBSOCKET_SWITCH == 'ON':
+    TEMPLATE_CONTEXT_PROCESSORS += (
+        'ws4redis.context_processors.default',
+    )
+
+    INSTALLED_APPS += (
+        # Websocket server backend
+        'ws4redis',
+        # App for user-chat with each other through websocke
+        'chatserver',
+    )
+
+    # This setting is required to override the Django's main loop, when running in
+    # development mode, such as ./manage runserver
+    WSGI_APPLICATION = 'ws4redis.django_runserver.application'
+
+    # URL that distinguishes websocket connections from normal requests
+    WEBSOCKET_URL = '/ws/'
+
+    # Set the number of seconds each message shall persited
+    WS4REDIS_EXPIRE = 3600
+
+    WS4REDIS_HEARTBEAT = '--heartbeat--'
+
+    WS4REDIS_PREFIX = 'demo'
+
 
 #==============================================================================
 # logging
