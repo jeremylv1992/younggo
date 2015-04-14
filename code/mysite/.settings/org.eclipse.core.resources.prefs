@@ -1,8 +1,9 @@
-#Sun Apr 12 11:12:50 CST 2015
+#Tue Apr 14 10:51:49 CST 2015
 eclipse.preferences.version=1
 encoding//cart/models.py=utf-8
 encoding//cart/urls.py=utf-8
 encoding//cart/views.py=utf-8
+encoding//chatserver/views.py=utf-8
 encoding//common/__init__.py=utf-8
 encoding//common/context_processors.py=utf-8
 encoding//common/log.py=utf-8

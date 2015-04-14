@@ -159,5 +159,28 @@
 		<span class="u-icon icon-corner-tick"></span>
 	</div><!-- / .m-member-info -->		
 </li>
+</script>
+ 
+<script type="text/x-mustache" charset="utf-8" id="chatwindow_contact_item_tmp">
+<li node-type="contact_item_1980923321" class="contacts SW_fun_bg clearfix">
+	<p node-type="nick" class="name W_autocut W_fl S_txt1" data-user-name="{{username}}">{{username}}</p>
+</li>	
+</script>
 
+<script type="text/x-mustache" charset="utf-8" id="chat_window_msg_tmp">
+<div class="msg_bubble_list bubble_l " style="display: block">
+	<div class="bubble_mod clearfix">
+		<div class="bubble_box SW_fun ">
+			<div class="bubble_cont ">
+				<div class="bubble_main clearfix" node-type="conRoot">
+					<div class="cont">
+						<p class="page">
+							{{msg}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
 </script>

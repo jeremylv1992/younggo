@@ -1,0 +1,124 @@
+<link rel="stylesheet" href="${STATIC_URL}css/chat/chat_window.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+
+<div class="webim_fold clearfix" style="bottom: 0px; right: 0px; visibility: visible;" node-type="chatMiniRoot" action-type="chatmini" action-data="from=chatmini">
+	<div class="fold_bg"></div>
+	<p class="fold_cont clearfix">
+		<em class="fold_font W_fl W_f14" node-type="miniContent">在线聊天</em>
+	</p>
+</div>
+<div class="webim_chat_window clearfix f-hide" style="width: 560px; position: fixed; right: 0px; bottom: 0px; z-index: 950; 
+	border:1px solid #CBCC4A; background-color: #CDCC4A" node-type="_root">
+	<div class="WB_webim_page W_fl">
+		<div node-type="_search" class="webim_serch">
+			<span class="WB_search_s">
+				<input type="text" maxlength="20" value="查找联系人或群" suda-data="key=webim_group_restr&amp;value=webim_search_group" node-type="iptSearch" class="W_input">
+				<span class="pos"></span></span>
+		</div>
+		<div node-type="_concact" class="webim_contacts_mod">
+			<div node-type="contact_slider_root" class="webim_contacts_bd" style="position: relative; overflow: auto;">
+				<div class="webim_tab_bd">
+					<div class="webim_contacts_group">
+						<ul node-type="contact_list" class="webim_contacts_list">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="private_dialogue_box W_fl" node-type="_container">
+		<div class="chat_head clearfix" node-type="_root">
+			<h3 class="chat_title W_fl W_autocut W_f14" id="user" data-user=""></h3>
+			<div class="chat_icon W_fr">
+				<a href="javascript:hide_chat_window();" class="W_ficon ficon_close S_ficon" title="关闭" node-type="_closeBtn">X</a>
+			</div>
+		</div>
+		<div class="private_dialogue_body" style="position: relative; height: 319px;">
+			<div class="private_dialogue_cont" style="position: relative; top: 0px; overflow: hidden; display: block; visibility: visible; height: 319px;">
+			</div>
+		</div>
+		<div class="private_send_box S_bg2" style="position:absolute; bottom:0;" node-type="root">
+			<!-- 触发textarea 时加 sendbox_mod_focus -->
+			<div class="sendbox_mod clearfix S_line1 " node-type="_frameContent">
+				<!-- 私信模块 -->
+				<div class="sendbox_mod_l W_fl" node-type="_tipsNode">
+					<div class="sendbox_area S_bg2" node-type="editorNode">
+						<textarea id="text_message" class="W_input" style="overflow: hidden; height: 22px;" node-type="_editorNode" placeholder="按回车发送私信!"></textarea>
+					</div>
+				</div>
+				<!-- 私信模块 -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+	jQuery(document).ready(function($) {
+		// var ws4redis = WS4Redis({
+			// uri: '{{ WEBSOCKET_URI }}foobar?subscribe-user',
+			// receive_message: receiveMessage,
+			// heartbeat_msg: {{ WS4REDIS_HEARTBEAT }}
+		// });
+
+		$("#text_message").keydown(function(event) {
+			if (event.keyCode === 13) {
+				event.preventDefault();
+				sendMessage();
+			}
+		});
+
+		$('#send_message').click(sendMessage);
+
+		// send message to the server using Ajax
+		function sendMessage() {
+			$.post('{% url "user_chat" %}', {
+				user: $('#user').attr("data-user"),
+				message: $('#text_message').val()
+			}, function(res){
+				$('#text_message').val("");
+			}, "json");
+		}
+
+		// receive a message though the Websocket from the server
+		function receiveMessage(msg) {
+			var tmp = $("#chat_window_msg_tmp").html();
+			Mustache.parse(tmp);
+			var html = Mustache.render(tmp, {msg:msg});
+			$("#private_dialogue_cont").append(html);
+		}
+		
+		$(".webim_fold").click(show_chat_window);
+		init_user_list();
+	});
+	
+	function init_user_list(){
+		var url = "/passport/get_username_list/";
+		$.get(url, {}, function(res){
+			if (res.result) {
+				for (var i=0; i < res.data.length; i++) {
+				  	var tmp = $("#chatwindow_contact_item_tmp").html();
+				  	Mustache.parse(tmp);
+				  	var html = Mustache.render(tmp, {username:res.data[i]});
+				  	$(".webim_contacts_list").append(html);
+				};
+				$(".contacts").click(select_user);
+			}else{
+				console.log(res.message);
+			}
+		}, "json");
+	}
+	
+	function select_user(){
+		var username = $(this).find(".name").attr("data-user-name");
+		$("#user").text(username);
+		$("#user").attr("data-user", username);
+	}
+	
+	function show_chat_window(){
+		$(".webim_chat_window").removeClass("f-hide");
+	}
+	
+	function hide_chat_window(){
+		$(".webim_chat_window").addClass("f-hide");
+	}
+	
+</script>

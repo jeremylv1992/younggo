@@ -46,4 +46,6 @@ def show_good(request, store_id, good_id):
     store = Store.objects.get(id=store_id)
     good = store.goods.get(id=good_id)
     return render_mako_context(request, '/show/good.html', locals())
-    
+
+def test_chat_page(request):
+    return render_mako_context(request, '/chat/chat_window.part', {})

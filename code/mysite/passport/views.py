@@ -8,6 +8,7 @@ from django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login, logout
 from django.contrib.auth import authenticate
 from django.conf import settings
 from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth.models import User
 from passport.forms import AuthenticationForm, RegistrationForm
 
 
@@ -91,3 +92,8 @@ def register(request, template_name='passport/register.html',
     }    
     return render_mako_context(request, '/passport/register.html', context)
 
+def get_username_list(request):
+    """
+    Return users' names
+    """
+    return render_json([_u.username for _u in User.objects.all()])

@@ -7,6 +7,7 @@ urlpatterns = patterns('home.views',
     url(r'^show/$', 'show_mall'),
     url(r'^show/(?P<store_id>\d+)/$', 'show_store'),
     url(r'^show/(?P<store_id>\d+)/(?P<good_id>\d+)/$', 'show_good'),
+    url(r'^chat/', 'test_chat_page'),
 )
 
 urlpatterns += patterns('home.store_views',

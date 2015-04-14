@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 6
-_modified_time = 1428593663.404
+_modified_time = 1428986004.669
 _template_filename='C:\\Users\\Jeremy\\Desktop\\younggo\\code\\mysite\\templates/show/good.html'
 _template_uri='/show/good.html'
 _template_cache=cache.Cache(__name__, _modified_time)
@@ -25,8 +25,8 @@ def _mako_get_namespace(context, name):
         return context.namespaces[(__name__, name)]
 def _mako_generate_namespaces(context):
     # SOURCE LINE 17
-    ns = runtime.TemplateNamespace('__anon_0x34def30', context._clean_inheritance_tokens(), templateuri=u'/header.part', callables=None, calling_uri=_template_uri)
-    context.namespaces[(__name__, '__anon_0x34def30')] = ns
+    ns = runtime.TemplateNamespace('__anon_0x350f970', context._clean_inheritance_tokens(), templateuri=u'/header.part', callables=None, calling_uri=_template_uri)
+    context.namespaces[(__name__, '__anon_0x350f970')] = ns
 
 def _mako_inherit(template, context):
     _mako_generate_namespaces(context)
@@ -36,7 +36,7 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         _import_ns = {}
-        _mako_get_namespace(context, '__anon_0x34def30')._populate(_import_ns, [u'*'])
+        _mako_get_namespace(context, '__anon_0x350f970')._populate(_import_ns, [u'*'])
         dynamic_head = _import_ns.get('dynamic_head', context.get('dynamic_head', UNDEFINED))
         good = _import_ns.get('good', context.get('good', UNDEFINED))
         def head_css():
@@ -86,7 +86,7 @@ def render_content(context,**pageargs):
     context.caller_stack._push_frame()
     try:
         _import_ns = {}
-        _mako_get_namespace(context, '__anon_0x34def30')._populate(_import_ns, [u'*'])
+        _mako_get_namespace(context, '__anon_0x350f970')._populate(_import_ns, [u'*'])
         def content():
             return render_content(context)
         good = _import_ns.get('good', context.get('good', UNDEFINED))
@@ -158,11 +158,14 @@ def render_content(context,**pageargs):
             __M_writer(u'\t\t\t\t\t\t</dd>\r\n\t\t\t\t\t</dl>\t\r\n')
             pass
         # SOURCE LINE 93
-        __M_writer(u'\t\t\t\t\t<dl class="i-num clearfix" id="J-num-select">\r\n\t\t\t\t\t\t<dt class="num-name">\r\n\t\t\t\t\t\t\t\u6570\u91cf\uff1a\r\n\t\t\t\t\t\t</dt>\r\n\t\t\t\t\t\t<dd class="i-notice-msg J-num-tips"></dd>\r\n\t\t\t\t\t\t<dd class="num-box">\r\n\t\t\t\t\t\t\t<span class="num-reduce num-reduce-disabled J-num-act-reduce"></span>\r\n\t\t\t\t\t\t\t<em class="num-input J-pro-num-txt" id="amount">1</em>\r\n\t\t\t\t\t\t\t<span class="num-add J-num-act-add"></span>\r\n\t\t\t\t\t\t</dd>\r\n\t\t\t\t\t\t<dd class="num-msg hidden" id="J-proStock-type"></dd>\r\n\t\t\t\t\t</dl>\r\n\t\t\t\t\t<div class="i-button clearfix">\r\n\t\t\t\t\t\t<div id="J-button-box" class="button-box">\r\n\t\t\t\t\t\t\t<!-- loading\u72b6\u6001\u52a0 .z-ui-btn-loading -->\r\n\t\t\t\t\t\t\t<a href="javascript:add_to_cart();" class="ui-btn-large ui-btn-primary ui-btn-loading" id="J-cartAdd-submit"> \r\n\t\t\t\t\t\t\t\t<span class="ui-btn-loading-before">\u52a0\u5165\u8d2d\u7269\u8f66 </span> \r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</form>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class="f-clearfix"></div>\r\n\t</div>\r\n\t\r\n\t<!-- \u5546\u54c1\u8be6\u60c5 -->\r\n\t<div id="J-FW-detail" class="FW-detail J-data-module">\r\n\t\t<div class="M-detail">\r\n\t\t\t<!-- \u7ec8\u7aef\u9875\u6a21\u5757\u5bfc\u822a -->\r\n\t\t\t<div class="M-detailTop" id="J-topbar">\r\n\t\t\t\t<ul class="dt-list">\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<a href="javascript:void(0);" class="dt-list-item J-topbar-tabs" >\u5546\u54c1\u8be6\u60c5</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t\t<div class="M-detailCon">\r\n\t\t\t\t<!-- \u5546\u54c1\u5c3a\u7801(\u65b0) -->\r\n\t\t\t\t\u5546\u5bb6\u81ea\u5df1\u7f16\u8f91\u3002\u3002\u3002\u3002\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n<script type="text/javascript" charset="utf-8">\n\tvar prices = $.parseJSON(\'')
-        # SOURCE LINE 138
+        __M_writer(u'\t\t\t\t\t<dl class="i-num clearfix" id="J-num-select">\r\n\t\t\t\t\t\t<dt class="num-name">\r\n\t\t\t\t\t\t\t\u6570\u91cf\uff1a\r\n\t\t\t\t\t\t</dt>\r\n\t\t\t\t\t\t<dd class="i-notice-msg J-num-tips"></dd>\r\n\t\t\t\t\t\t<dd class="num-box">\r\n\t\t\t\t\t\t\t<span class="num-reduce num-reduce-disabled J-num-act-reduce"></span>\r\n\t\t\t\t\t\t\t<em class="num-input J-pro-num-txt" id="amount">1</em>\r\n\t\t\t\t\t\t\t<span class="num-add J-num-act-add"></span>\r\n\t\t\t\t\t\t</dd>\r\n\t\t\t\t\t\t<dd class="num-msg hidden" id="J-proStock-type"></dd>\r\n\t\t\t\t\t</dl>\r\n\t\t\t\t\t<div class="i-button clearfix">\r\n\t\t\t\t\t\t<div id="J-button-box" class="button-box">\r\n\t\t\t\t\t\t\t<!-- loading\u72b6\u6001\u52a0 .z-ui-btn-loading -->\r\n\t\t\t\t\t\t\t<a href="javascript:add_to_cart();" class="ui-btn-large ui-btn-primary ui-btn-loading" id="J-cartAdd-submit"> \r\n\t\t\t\t\t\t\t\t<span class="ui-btn-loading-before">\u52a0\u5165\u8d2d\u7269\u8f66 </span> \r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</form>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t<div class="f-clearfix"></div>\r\n\t</div>\r\n\t\r\n\t<!-- \u5546\u54c1\u8be6\u60c5 -->\r\n\t<div id="J-FW-detail" class="FW-detail J-data-module">\r\n\t\t<div class="M-detail">\r\n\t\t\t<!-- \u7ec8\u7aef\u9875\u6a21\u5757\u5bfc\u822a -->\r\n\t\t\t<div class="M-detailTop" id="J-topbar">\r\n\t\t\t\t<ul class="dt-list">\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<a href="javascript:void(0);" class="dt-list-item J-topbar-tabs" >\u5546\u54c1\u8be6\u60c5</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t\t<div class="M-detailCon">\r\n\t\t\t\t<!-- \u5546\u54c1\u5c3a\u7801(\u65b0) -->\r\n\t\t\t\t\u5546\u5bb6\u81ea\u5df1\u7f16\u8f91\u3002\u3002\u3002\u3002\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n')
+        # SOURCE LINE 137
+        runtime._include_file(context, u'/chat/chat_window.part', _template_uri)
+        __M_writer(u'\r\n<script type="text/javascript" charset="utf-8">\n\tvar prices = $.parseJSON(\'')
+        # SOURCE LINE 139
         __M_writer(unicode(good.prices))
         __M_writer(u"');\r\n\tvar options = $.parseJSON('")
-        # SOURCE LINE 139
+        # SOURCE LINE 140
         __M_writer(unicode(good.options))
         __M_writer(u"');\n</script>\r\n")
         return ''
@@ -174,7 +177,7 @@ def render_header(context,**pageargs):
     context.caller_stack._push_frame()
     try:
         _import_ns = {}
-        _mako_get_namespace(context, '__anon_0x34def30')._populate(_import_ns, [u'*'])
+        _mako_get_namespace(context, '__anon_0x350f970')._populate(_import_ns, [u'*'])
         dynamic_head = _import_ns.get('dynamic_head', context.get('dynamic_head', UNDEFINED))
         def header():
             return render_header(context)
@@ -195,7 +198,7 @@ def render_head_js(context,**pageargs):
     context.caller_stack._push_frame()
     try:
         _import_ns = {}
-        _mako_get_namespace(context, '__anon_0x34def30')._populate(_import_ns, [u'*'])
+        _mako_get_namespace(context, '__anon_0x350f970')._populate(_import_ns, [u'*'])
         def head_js():
             return render_head_js(context)
         STATIC_URL = _import_ns.get('STATIC_URL', context.get('STATIC_URL', UNDEFINED))
@@ -218,7 +221,7 @@ def render_head_css(context,**pageargs):
     context.caller_stack._push_frame()
     try:
         _import_ns = {}
-        _mako_get_namespace(context, '__anon_0x34def30')._populate(_import_ns, [u'*'])
+        _mako_get_namespace(context, '__anon_0x350f970')._populate(_import_ns, [u'*'])
         STATIC_URL = _import_ns.get('STATIC_URL', context.get('STATIC_URL', UNDEFINED))
         parent = _import_ns.get('parent', context.get('parent', UNDEFINED))
         def head_css():

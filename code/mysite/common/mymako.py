@@ -115,7 +115,7 @@ def render_json(dictionary={}):
     if type(dictionary) is not dict:
         # 如果参数不是dict,则组合成dict
         dictionary = {'result': True,
-                      'message': dictionary,
+                      'data': dictionary,
                       }
     return HttpResponse(json.dumps(dictionary))  # , mimetype='application/json'
 
