@@ -1,0 +1,128 @@
+ERROR [2015-04-09 23:27:20] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 2696 6288 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\cart\views.py line: 14 in add_record
+params = json.loads(request.POST['params'])
+;D:\Python27\lib\site-packages\django\utils\datastructures.py line: 256 in __getitem__
+raise MultiValueDictKeyError("Key %r not found in %r" % (key, self))
+ 
+
+ERROR [2015-04-09 23:27:49] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 2696 6288 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\cart\views.py line: 14 in add_record
+params = json.loads(request.POST['params'])
+;D:\Python27\lib\site-packages\django\utils\datastructures.py line: 256 in __getitem__
+raise MultiValueDictKeyError("Key %r not found in %r" % (key, self))
+ 
+
+ERROR [2015-04-09 23:28:24] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 2696 6288 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\cart\views.py line: 14 in add_record
+params = json.loads(request.POST['params'])
+;D:\Python27\lib\site-packages\django\utils\datastructures.py line: 256 in __getitem__
+raise MultiValueDictKeyError("Key %r not found in %r" % (key, self))
+ 
+
+ERROR [2015-04-09 23:30:15] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 2696 6288 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\cart\views.py line: 21 in add_record
+unit_price=params['unit_price'])
+;D:\Python27\lib\site-packages\django\db\models\manager.py line: 138 in create
+return self.get_query_set().create(**kwargs)
+;D:\Python27\lib\site-packages\django\db\models\query.py line: 358 in create
+obj = self.model(**kwargs)
+;D:\Python27\lib\site-packages\django\db\models\base.py line: 352 in __init__
+setattr(self, field.name, rel_obj)
+;D:\Python27\lib\site-packages\django\db\models\fields\related.py line: 331 in __set__
+self.field.name, self.field.rel.to._meta.object_name))
+ 
+
+ERROR [2015-04-09 23:33:14] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 2096 7644 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\cart\views.py line: 22 in add_record
+unit_price=params['unit_price'])
+;D:\Python27\lib\site-packages\django\db\models\manager.py line: 138 in create
+return self.get_query_set().create(**kwargs)
+;D:\Python27\lib\site-packages\django\db\models\query.py line: 358 in create
+obj = self.model(**kwargs)
+;D:\Python27\lib\site-packages\django\db\models\base.py line: 352 in __init__
+setattr(self, field.name, rel_obj)
+;D:\Python27\lib\site-packages\django\db\models\fields\related.py line: 331 in __set__
+self.field.name, self.field.rel.to._meta.object_name))
+ 
+
+ERROR [2015-04-09 23:34:30] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 2096 7644 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\cart\views.py line: 22 in add_record
+unit_price=params['unit_price'])
+;D:\Python27\lib\site-packages\django\db\models\manager.py line: 138 in create
+return self.get_query_set().create(**kwargs)
+;D:\Python27\lib\site-packages\django\db\models\query.py line: 358 in create
+obj = self.model(**kwargs)
+;D:\Python27\lib\site-packages\django\db\models\base.py line: 352 in __init__
+setattr(self, field.name, rel_obj)
+;D:\Python27\lib\site-packages\django\db\models\fields\related.py line: 331 in __set__
+self.field.name, self.field.rel.to._meta.object_name))
+ 
+
+ERROR [2015-04-09 23:36:14] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 3592 4256 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\cart\views.py line: 22 in add_record
+unit_price=params['unit_price'])
+;D:\Python27\lib\site-packages\django\db\models\manager.py line: 138 in create
+return self.get_query_set().create(**kwargs)
+;D:\Python27\lib\site-packages\django\db\models\query.py line: 358 in create
+obj = self.model(**kwargs)
+;D:\Python27\lib\site-packages\django\db\models\base.py line: 352 in __init__
+setattr(self, field.name, rel_obj)
+;D:\Python27\lib\site-packages\django\db\models\fields\related.py line: 331 in __set__
+self.field.name, self.field.rel.to._meta.object_name))
+ 
+
+ERROR [2015-04-13 00:53:54] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 2348 3104 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\order\views.py line: 36 in generate
+store=_g[0],
+ 
+
+ERROR [2015-04-13 00:57:59] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 5824 3968 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\order\views.py line: 50 in generate
+return render_mako_context(request, '', {})
+;C:\Users\Jeremy\Desktop\younggo\code\mysite\common\mymako.py line: 75 in render_mako_context
+return render_mako(template_name, dictionary=dictionary, context_instance=context_instance)
+;C:\Users\Jeremy\Desktop\younggo\code\mysite\common\mymako.py line: 52 in render_mako
+mako_temp = mylookup.get_template(template_name)
+;D:\Python27\lib\site-packages\mako-0.5.0-py2.7.egg\mako\lookup.py line: 221 in get_template
+"Cant locate template for uri %r" % uri)
+ 
+
+ERROR [2015-04-13 22:07:53] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 1392 6552 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\order\views.py line: 51 in generate
+clear_shopping_cart(request.user)
+;C:\Users\Jeremy\Desktop\younggo\code\mysite\cart\views.py line: 21 in clear_shopping_cart
+user.shopping_items.clear()
+ 
+
+ERROR [2015-04-13 22:23:46] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 8056 5264 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\order\views.py line: 51 in generate
+clear_shopping_cart(request.user)
+;C:\Users\Jeremy\Desktop\younggo\code\mysite\cart\views.py line: 21 in clear_shopping_cart
+user.shopping_items.clear()
+ 
+
+ERROR [2015-04-13 22:26:13] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 3436 6976 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\order\views.py line: 51 in generate
+clear_shopping_cart(request.user)
+;C:\Users\Jeremy\Desktop\younggo\code\mysite\cart\views.py line: 21 in clear_shopping_cart
+user.shopping_items.all().remove()
+ 
+
+ERROR [2015-04-13 22:26:55] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 5860 3444 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\order\views.py line: 51 in generate
+clear_shopping_cart(request.user)
+;C:\Users\Jeremy\Desktop\younggo\code\mysite\cart\views.py line: 22 in clear_shopping_cart
+_i.remove()
+ 
+
+ERROR [2015-04-13 22:34:28] C:\Users\Jeremy\Desktop\younggo\code\mysite\common\log.py 32 error 6384 7260 
+ 	 ;C:\Users\Jeremy\Desktop\younggo\code\mysite\order\views.py line: 52 in generate
+return render_mako_context(request, '', {})
+;C:\Users\Jeremy\Desktop\younggo\code\mysite\common\mymako.py line: 75 in render_mako_context
+return render_mako(template_name, dictionary=dictionary, context_instance=context_instance)
+;C:\Users\Jeremy\Desktop\younggo\code\mysite\common\mymako.py line: 52 in render_mako
+mako_temp = mylookup.get_template(template_name)
+;D:\Python27\lib\site-packages\mako-0.5.0-py2.7.egg\mako\lookup.py line: 221 in get_template
+"Cant locate template for uri %r" % uri)
+ 
+

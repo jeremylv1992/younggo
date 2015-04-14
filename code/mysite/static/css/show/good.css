@@ -204,7 +204,7 @@
 .pbox-price {
   	display: inline-block;
   	font-size: 30px;
-  	color: #f43499;
+  	color: #CD2757;
 }
 
 .pbox-yen {
@@ -397,4 +397,60 @@
 .M-detailCon {
   	padding-top: 30px;
   	font-size: 14px;
+}
+
+.option {
+	padding: 11px 11px 1px;
+  	position: relative;
+  	z-index: 3;
+  	margin-left: -10px;
+  	zoom: 1;
+}
+
+.option-list {
+ 	float: left;
+  	max-width: 360px;
+  	position: relative;
+  	zoom: 1;
+}
+
+.option-list-item {
+  	float: left;
+  	position: relative;
+  	min-width: 52px;
+  	max-width: 304px;
+  	_width: 52px;
+  	height: 26px;
+  	font-size: 12px;
+  	padding: 1px 10px;
+  	margin: 0 10px 10px 0;
+ 	border: 1px solid #b5b5b5;
+  	text-align: center;
+  	line-height: 26px;
+  	cursor: pointer;
+  	background-color: #fff;	
+}
+
+.option-list-item-name {
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+  	max-width: 304px;
+  	display: inline-block;	
+}
+
+.option-list-item:hover {
+	border-color: #CD2757;
+}
+
+.option-selected {
+  	border: 2px solid #CD2757;
+  	height: 26px;
+  	color: #CD2757;
+  	padding: 0 9px;
+  	_overflow: hidden;
+}
+
+.option-selected .i-select{
+	display: block;
 }

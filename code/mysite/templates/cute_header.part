@@ -1,0 +1,46 @@
+<header class="header">
+	<nav class="top_nav">
+		<div id="" class="head_inner">
+			<ul class="top_nav_tool">
+				% if user.is_authenticated():
+				<li>
+					<a href="###" target="_self">欢迎，${user.username} |</a>
+				</li>		
+				<li>
+					<a href="/passport/logout/" target="_self">注销 |</a>
+				</li>		
+				% else:
+				<li>
+					<a href="/passport/login/" target="_self">登录 |</a>
+				</li>
+				<li>
+					<a href="/passport/register/" target="_self">注册 |</a>
+				</li>				
+				% endif
+				<li>
+					<a href="###" target="_blank">我的大学</a>
+				</li>
+				<li>
+					<a href="###" target="_blank">我的订单</a>
+				</li>
+				<li>
+					<a href="/cart/" target="_blank">购物车</a>
+				</li>
+			</ul>
+			<div class="header_logo_dop">
+				<a target="_self" href="/"> 
+					<img src="${STATIC_URL}images/younggo_logo.jpg" alt="一家买卖情怀的网站"> </a>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<style type="text/css" media="screen">
+	.header {
+		overflow: hidden;
+  		zoom: 1;
+  		margin-bottom: 25px;
+  		height: 96px;
+  		border-bottom: 2px solid #f3168a;
+	}
+</style>

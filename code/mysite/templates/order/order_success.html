@@ -1,0 +1,33 @@
+<%inherit file='/base.html'/>
+
+<%block name='head_css'>
+	${parent.head_css()}
+	<link rel="stylesheet" href="${STATIC_URL}css/order/common.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	<link rel="stylesheet" href="${STATIC_URL}css/order/success.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+</%block>
+
+<%block name='header'>
+	<%include file='/cute_header.part'/>
+</%block>
+
+<%block name='content'>
+<div class="g-bd">
+	<div data-isdaifu="" class="g-row J_ue_position_container
+	" id="J_counter">
+		<div class="m-orders-status J_order_info  " data-expire_time="1428937626">
+			<div class="m-tips">
+				<span class="u-icon tips-icon icon-success"></span>
+				<div class="tips-cnt">
+					<p class="tips-text J_ad_AD016wm08">
+						订单提交成功，请等待快递送货上门！
+					</p>
+				</div>
+			</div>
+			<p class="orders-status-desc">
+				可在<a href="/order/"><span class="u-highlight J_countdown_container">我的订单</span></a>查看订单详情。
+			</p>
+		</div>
+	</div>
+	<!-- / .g-row -->
+</div>
+</%block>

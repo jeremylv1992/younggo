@@ -40,3 +40,124 @@
 </dl>
 </script>
 
+<script type="text/x-mustache" charset="utf-8" id="address_item_tmp">
+<div class="m-modal modify-address-modal">
+	<div class="modal-inner">
+		<div class="modal-cnt">
+			<h2 class="modify-address-title">收货信息</h2>
+			<form class="m-form address-form" role="form" action="./address.php">
+				<input type="hidden" name="id" value="">
+				<div class="form-item form-title-item J_form_item">
+					<input type="text" class="u-ipt" placeholder="收货人姓名" name="consignee" value="" autofocus="true" mars_sead="address_name_input">
+					<div class="m-tooltips tooltips-left-arrows tooltips-error">
+						<div class="tooltips-arrows-wrapper">
+							<div class="tooltips-arrows">
+								<span class="tooltips-arrow-border">◆</span>
+								<span class="tooltips-arrow-bg">◆</span>
+							</div>
+						</div>
+						<div class="tooltips-cnt">
+							<div class="m-tips tips-small">
+								<i class="u-icon tips-icon icon-error-small"></i>
+								<div class="tips-cnt">
+									<p class="tips-text J_tips_txt"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-item form-mobile-item J_form_item">
+					<input type="text" class="u-ipt" placeholder="手机号码" name="mobile" value="" mars_sead="address_phone_input" data-or-verification="phone">
+					<div class="m-tooltips tooltips-left-arrows tooltips-error">
+						<div class="tooltips-arrows-wrapper">
+							<div class="tooltips-arrows">
+								<span class="tooltips-arrow-border">◆</span>
+								<span class="tooltips-arrow-bg">◆</span>
+							</div>
+						</div>
+						<div class="tooltips-cnt">
+							<div class="m-tips tips-small">
+								<i class="u-icon tips-icon icon-error-small"></i>
+								<div class="tips-cnt">
+									<p class="tips-text J_tips_txt"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-item form-tel-item J_form_item" data-input-error="z-form-item-error z-form-item-error-tooltips">
+					<input type="text" class="u-ipt" placeholder="备用联系电话（固话/手机）" name="phone" value="" mars_sead="address_telephone_input" data-or-verification="mobile">
+					<div class="m-tooltips tooltips-left-arrows tooltips-error">
+						<div class="tooltips-arrows-wrapper">
+							<div class="tooltips-arrows">
+								<span class="tooltips-arrow-border">◆</span>
+								<span class="tooltips-arrow-bg">◆</span>
+							</div>
+						</div>
+						<div class="tooltips-cnt">
+							<div class="m-tips tips-small">
+								<i class="u-icon tips-icon icon-error-small"></i>
+								<div class="tips-cnt">
+									<p class="tips-text J_tips_txt">
+										电话格式不正确（请输入手机号 或 区号-固话）
+									</p>
+								</div>
+							</div>
+						</div>
+					</div><!-- / .tooltips-left-arrows -->
+				</div>
+				<div class="form-item form-address-detail-item J_form_item">
+					<textarea class="u-textarea address-textarea J_special_tips_textarea" placeholder="详细地址" name="address" mars_sead="address_detail_input"></textarea>
+					<div class="m-tooltips tooltips-left-arrows tooltips-info address-guide-tooltips">
+						<div class="tooltips-arrows-wrapper">
+							<div class="tooltips-arrows">
+								<span class="tooltips-arrow-border">◆</span>
+								<span class="tooltips-arrow-bg">◆</span>
+							</div>
+						</div>
+						<div class="tooltips-cnt">
+							<p>
+								填写路名、门牌号，请勿再次填写省市区
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="form-item-actions">
+					<a href="javascript:submit_addr();" role="button" class="u-btn btn-primary J_address_save J_fake_a"> <span class="btn-text">保存</span> <span class="btn-loading-text bg-loading-gray-small">加载中...</span> </a>
+					<a href="javascript:close_addr_tmp();" role="button" class="u-btn btn-link J_address_cancel J_fake_a" >取消</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<a href="javascript:close_addr_tmp();" class="btn-modal-close J_address_cancel J_fake_a" title="关闭" role="button" mars_sead="address_notsave_btn">×</a>
+	<!-- / .address-system-info-modal -->
+</div>
+</script>
+
+<script type="text/x-mustache" charset="utf-8" id="address_item_show">
+<li class="inline-block-item address-item J_address_item_container" data-current="z-address-item-current" 
+	data-intro="{{name}}.{{tel}}.{{addr}}" data-address-id="{{id}}">
+	<div class="m-member-info address-inner J_address_item" data-hover="address-inner-hover" >
+		<div class="member-info-item member-info-title">
+			<span class="u-icon icon-address-member"></span>
+			<p class="member-text">
+				<span class="member-name" title="{{name}}">{{name}}</span>
+			</p>
+		</div>
+		<div class="member-info-item member-info-phone">
+			<span class="u-icon icon-address-phone"></span>
+			<p class="member-text">
+				<span class="member-mobile">{{tel}}</span>
+			</p>
+		</div>
+		<div class="member-info-item member-info-local" title="{{addr}}">
+			<span class="u-icon icon-address-local"></span>
+			<address class="member-text">
+				{{addr}}
+			</address>
+		</div>
+		<span class="u-icon icon-corner-tick"></span>
+	</div><!-- / .m-member-info -->		
+</li>
+
+</script>

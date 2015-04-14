@@ -112,6 +112,8 @@ INSTALLED_APPS = (
     # Note: 请注意在第一次syncdb时只加入south, 而不加自己的app，先syncdb初始化south的数据，
     # 然后再加入自己的app进行south操作!
     'home',
+    'cart',
+    'order',
 )
 
 

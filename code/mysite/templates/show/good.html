@@ -1,4 +1,7 @@
 <%inherit file='/base.html'/>
+<%!
+	import json
+%>
 
 <%block name='head_css'>
 	${parent.head_css()}
@@ -61,41 +64,32 @@
 					<p class="pib-title-class">
 						<a href="/show/${store.id}/" target="_blank">${store.name} </a>
 					</p>
-					<p class="pib-title-detail">
+					<p class="pib-title-detail" id="good_id" data-good-id="${good.id}">
 						${good.name}
 					</p>
 				</div>
 			</div>
 			<div class="pi-price-box">
-				<span class="pbox-price"><i class="pbox-yen">¥</i><em>${good.min_price}</em></span>
+				<span class="pbox-price"><i class="pbox-yen">¥</i><em id="cur_price">${good.min_price}</em></span>
 			</div>
 			<div class="pi-attr-box" id="J-proData-box">
 				<form id="J-cartAdd-frm" class="cartAdd-form" method="post" action="http://cart.vip.com/te2/add.php">
-					<dl class="color">
-						<dt class="color-name">
-							颜色：
-						</dt>
-						<dd class="color-list">
-							<ul>
-								<li class="color-list-item">
-									<a id="J-colorItem-50551455" href="/detail-385812-50551455.html" title="黑色翻领休闲短袖T恤" class=""> <img class="fl" src="http://a.vpimg3.com/upload/merchandise/385812/H-7132217030099-1_2.jpg" data-original="http://a.vpimg3.com/upload/merchandise/385812/H-7132217030099-1_2.jpg" width="34" height="43" alt="黑色翻领休闲短袖T恤" mars_sead="m_te_goods_buy_color_check" style="display: block;"> <span class="i-select"></span></a>
-								</li>
-							</ul>
+					<%
+						options = json.loads(good.options)
+					%>
+					% for option in options:
+					<dl class="option clearfix" id="${option[0]}">
+						<dt class="option-name">${option[0]}：</dt>
+						<dd class="option-list">
+							% for item in option[1]:
+							<li class="option-list-item" data-item="${item}">
+								<span class="option-list-item-name">${item}</span>
+								<span class="i-select"></span>
+							</li>
+							% endfor
 						</dd>
-					</dl>
-					<dl class="i-size clearfix J-sizeArea-wrap " id="J-sizeArea-wrap">
-						<dt class="size-name">
-							尺码：
-						</dt>
-						<dd class="size-list">
-							<ul>
-								<li class="size-list-item J-sizeID" id="J-cartAdd-sizeID-130616012" data-size-name="56" data-hover="size-list-item-hover" data-id="130616012" mars_sead="m_te_goods_buy_size_check" style="z-index: 1;">
-									<span class="size-list-item-name">56</span>
-									<span class="i-select"></span>
-								</li>
-							</ul>
-						</dd>
-					</dl>
+					</dl>	
+					% endfor
 					<dl class="i-num clearfix" id="J-num-select">
 						<dt class="num-name">
 							数量：
@@ -103,7 +97,7 @@
 						<dd class="i-notice-msg J-num-tips"></dd>
 						<dd class="num-box">
 							<span class="num-reduce num-reduce-disabled J-num-act-reduce"></span>
-							<em class="num-input J-pro-num-txt">1</em>
+							<em class="num-input J-pro-num-txt" id="amount">1</em>
 							<span class="num-add J-num-act-add"></span>
 						</dd>
 						<dd class="num-msg hidden" id="J-proStock-type"></dd>
@@ -111,9 +105,8 @@
 					<div class="i-button clearfix">
 						<div id="J-button-box" class="button-box">
 							<!-- loading状态加 .z-ui-btn-loading -->
-							<a href="javascript:;" class="ui-btn-large ui-btn-primary ui-btn-loading" id="J-cartAdd-submit"> 
-								<span class="ui-btn-loading-before">加入购物袋 </span> 
-								<span class="ui-btn-loading-after"><span class="ui-btn-txt"></span> </span> 
+							<a href="javascript:add_to_cart();" class="ui-btn-large ui-btn-primary ui-btn-loading" id="J-cartAdd-submit"> 
+								<span class="ui-btn-loading-before">加入购物车 </span> 
 							</a>
 						</div>
 					</div>
@@ -141,6 +134,8 @@
 		</div>
 	</div>
 </div>
-
-
+<script type="text/javascript" charset="utf-8">
+	var prices = $.parseJSON('${good.prices}');
+	var options = $.parseJSON('${good.options}');
+</script>
 </%block>

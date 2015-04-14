@@ -1,0 +1,222 @@
+<%inherit file='/base.html'/>
+
+<%block name='head_css'>
+	${parent.head_css()}
+	<link rel="stylesheet" href="${STATIC_URL}css/order/common.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	<link rel="stylesheet" href="${STATIC_URL}css/order/checkout.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+
+</%block>
+
+<%block name='head_js'>
+	${parent.head_js()}
+	<script src="${STATIC_URL}js/order/checkout.js" type="text/javascript" charset="utf-8"></script>
+</%block>
+
+<%block name='header'>
+	<%include file='/cute_header.part'/>
+</%block>
+
+<%block name='content'>
+<%
+	groups = {}
+	for _i in items:
+		if _i.good.store.id not in groups.keys():
+			groups[_i.good.store.id] = [_i.good.store, []]
+		groups[_i.good.store.id][1].append(_i)	
+%>
+<div class="g-bd">
+	<div class="g-row J_ue_position_container">
+		<div class="m-ad page-top-ad f-hide" id="J_comm_ad">
+			<p class="ad-text J_ad_text"></p>
+		</div>
+		<div class="m-flow-steps z-flow-steps-confirm J_flow_steps">
+			<i class="flow-steps-bg"></i>
+			<ul class="m-inline-block">
+				<li class="inline-block-item flow-step flow-step-cart">
+					<span class="flow-step-text">查看购物袋</span>
+				</li>
+				<li class="inline-block-item flow-step flow-step-confirm">
+					<span class="flow-step-text">确认订单信息</span>
+				</li>
+				<li class="inline-block-item flow-step flow-step-submit">
+					<span class="flow-step-text">成功提交订单</span>
+				</li>
+			</ul>
+		</div>
+		<div class="m-inline-block channel-tips">
+			<h2 class="inline-block-item channel-tips-title">确认订单信息</h2>
+		</div>
+		<div class="m-box address-box z-address-box-initialize-success z-address-box-old-customers" id="J_address_module">
+			<div class="box-hd">
+				<h2 class="box-hd-title">收货信息</h2>
+			</div>
+			<div class="box-bd">
+				<div class="address-box-cnt address-box-cnt-initialize-success">
+					<div class="address-list-wrapper J_address_list_wrapper z-address-lt-3">
+						<div class="m-address">
+							<ul class="m-inline-block address-list my_address_list">
+								<li class="inline-block-item address-item address-item-add address_item_container " data-hover="address-item-add-hover" data-touch="z-touch">
+									<div class="address-inner">
+										<a class="add-address address_add_btn J_fake_a" href="###" mars_sead="address_new_radio"> <span class="u-icon icon-address-add"></span>
+										<p>
+											添加地址
+										</p> </a>
+									</div>
+								</li>
+							</ul>
+						</div><!-- / .m-address -->
+					</div>
+				</div>
+			</div><!-- / .box-bd -->
+		</div>
+		<div class="m-box payment-box co_payment z-payment-box-initialize-success" id="paymentTabModule">
+			<div class="box-hd">
+				<h2 class="box-hd-title">支付方式</h2>
+				<p class="u-ad-text payment-box-hd-ad-text J_ad_AD14">
+					*&nbsp;目前仅支持货到付款
+				</p>
+			</div>
+			<div class="box-bd">
+				<div class="payment-box-cnt payment-box-cnt-initialize-success">
+					<div id="J_payment_module_new" class="payment-container">
+						<div class="m-payment-type">
+							<div class="payment-type-item J_cod_method_item">
+								<div class="radio-item J_cod_method_radio_item" mars_sead="payment_cod_radio">
+									<div class="m-radio z-radio-checked">
+										<div class="u-radio">
+											<input type="radio" id="J_cod_method_radio" name="pay_type_radio" simulate="done">
+											<label class="simulate" for="J_cod_method_radio">货到付款</label>
+										</div>
+										<label for="J_cod_method_radio" class="radio-text">货到付款</label>
+									</div>
+									<p class="payment-desc">
+										<span class="J_ad_AD015wm15">送货上门后再付款。</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div><!-- / .payment-container -->
+				</div>
+			</div>
+		</div><!-- / .m-box -->
+		<div class="m-box order-info-box z-order-info-box-initialize-success" id="J_order_info_module">
+			<div class="box-hd">
+				<h2 class="box-hd-title">订单商品信息</h2>
+			</div>
+			<div class="box-bd">
+				<div class="order-info-wrapper">
+					<%
+						total = 0
+						trans_fare = 0
+					%>
+					% for group in groups.values():
+					<table class="u-table order-info-table vip-order-info-table" id="J_info_table">
+						<%	
+							sub_total = 0 
+							sub_trans_fare = 10
+						%>
+						<thead>
+							<tr>
+								<th colspan="2" class="product-item">
+								<div class="product-item-inner">
+									<em>${group[0].name}</em>发货订单
+								</div></th>
+								<th class="price-item">单价</th>
+								<th class="quantity-item">数量</th>
+							</tr>
+						</thead>
+						<tbody>
+							% for item in group[1]:
+							<tr class="product-row table-last-row">
+								<td class="product-item">
+								<p class="product-item-text" title="${item.good.name}">
+									${item.good.name}
+								</p><p class="product-item-notice"></p></td>
+								<td class="size-item "> ${item.options} </td>
+								<td class="price-item"><span class="m-price"> <span class="u-yen">¥</span><span class="u-price">${item.unit_price}</span> </span></td>
+								<td class="quantity-item">${item.amount}</td>
+							</tr>
+							<%	sub_total += item.unit_price*item.amount %>
+							% endfor
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="4">
+								<div class="inner">
+									<div class=" shipping-costs J_sum_items" data-hover="shipping-costs-hover" data-touch="z-touch">
+										<span class="tooltips-trigger-text"> 运费： 
+											<span class="">
+												<span class="m-price"> 
+													<span class="u-yen">¥</span>
+													<span class="u-price">${sub_trans_fare}</span> 
+												</span>
+											</span> 
+										</span>
+									</div><!-- / .shipping-costs -->
+									<%	sub_total += sub_trans_fare %>
+									<span class="subtotal J_sum_items"> 本订单金额： <span class="m-price"> <span class="u-yen">¥</span><span class="u-price J_amount_0">${sub_total}</span> </span> </span>
+								</div></td>
+							</tr>
+						</tfoot>
+					</table>
+					<%
+						trans_fare += sub_trans_fare;
+						total += sub_total;
+					%>
+					% endfor
+				</div>
+				<div class="m-checkout-review">
+					<div class="m-inline-block checkout-review-inner">
+						<div class="inline-block-item review-others-wrapper">
+							<div class="review-others">
+								<div class="m-inline-block review-item review-address-item" data-hover="review-item-hover" data-touch="z-touch">
+									<h3 class="inline-block-item review-item-title">收货信息：</h3>
+									<div class="inline-block-item review-item-cnt transport_info">
+										<div class="">
+											<span></span>
+										</div>
+									</div>
+								</div>
+								<div class="m-inline-block review-item review-payment-item" data-hover="review-item-hover" data-touch="z-touch">
+									<h3 class="inline-block-item review-item-title">支付方式：</h3>
+									<div class="inline-block-item review-item-cnt J_paymen_info">
+										货到付款
+									</div>
+								</div>
+								<!-- / .m-shopping-tips -->
+							</div><!-- / .review-others -->
+						</div><!-- / .inline-block-item -->
+						<div class="inline-block-item review-price-wrapper">
+							<div class="review-price">
+								<ul class="review-price-list">
+									<li class="review-price-item J_sum_items">
+										<span class="m-price"> <span class="u-yen">¥</span><span class="u-price J_goods_amount">${total-trans_fare}</span> </span>
+										<h4 class="review-price-item-title">商品金额：</h4>
+									</li>
+									<li class="review-price-item J_sum_items">
+										<span class="m-price"> <span class="u-yen">¥</span><span class="u-price J_shipping_amount">${trans_fare}</span> </span>
+										<h4 class="review-price-item-title">运费：</h4>
+									</li>
+								</ul>
+								<div class="review-total-price J_sum_items">
+									<strong class="m-price"> <span class="u-yen">¥</span><span class="u-price J_pay_amount">${total}</span> </strong>
+									<h4 class="review-total-price-title">待支付：</h4>
+								</div>
+								<div class="review-price-actions J_can_not_order_tips" id="J_can_not_order_tips">
+									<form id="order_frmSave" method="post" action="/order/generate/" role="form">
+										<input type="hidden" name="address_id" value="">
+										<input type="hidden" name="pay_way" value="1" id="pay_way"/>
+										<button class="u-btn btn-primary btn-large J_order_submit_btn" type="submit">
+											<span class="btn-text" mars_sead="checkout_submit_btn">提交订单</span>
+										</button>
+									</form>
+								</div><!-- / .review-price-actions -->
+							</div><!-- / .review-price -->
+						</div><!-- / .inline-block-item -->
+					</div><!-- / .checkout-review-inner -->
+				</div><!-- / .m-checkout-review -->
+			</div><!-- / .box-bd -->
+		</div><!-- / .m-box -->
+	</div><!-- / .g-row -->
+</div>	
+</%block>

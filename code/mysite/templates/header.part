@@ -29,13 +29,7 @@
 					<a href="###" target="_blank">我的订单</a>
 				</li>
 				<li>
-					<a href="###" target="_blank">购物车</a>
-				</li>
-				<li>
-					<a href="###" target="_blank">收藏</a>
-				</li>
-				<li>
-					<a href="###" target="_blank">在线客服</a>
+					<a href="/cart/" target="_blank">购物车</a>
 				</li>
 			</ul>
 			<div class="header_logo_dop">

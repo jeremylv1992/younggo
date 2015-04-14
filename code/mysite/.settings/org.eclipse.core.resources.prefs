@@ -1,5 +1,8 @@
-#Sat Apr 04 17:38:07 CST 2015
+#Sun Apr 12 11:12:50 CST 2015
 eclipse.preferences.version=1
+encoding//cart/models.py=utf-8
+encoding//cart/urls.py=utf-8
+encoding//cart/views.py=utf-8
 encoding//common/__init__.py=utf-8
 encoding//common/context_processors.py=utf-8
 encoding//common/log.py=utf-8
@@ -14,6 +17,10 @@ encoding//home/store_views.py=utf-8
 encoding//home/urls.py=utf-8
 encoding//home/views.py=utf-8
 encoding//home/websocket_views.py=utf-8
+encoding//order/forms.py=utf-8
+encoding//order/models.py=utf-8
+encoding//order/urls.py=utf-8
+encoding//order/views.py=utf-8
 encoding//passport/__init__.py=utf-8
 encoding//passport/decorators.py=utf-8
 encoding//passport/forms.py=utf-8
@@ -22,5 +29,6 @@ encoding//passport/urls.py=utf-8
 encoding//passport/views.py=utf-8
 encoding/settings.py=utf-8
 encoding/settings_global_dev.py=utf-8
+encoding/settings_global_win.py=utf-8
 encoding/urls.py=utf-8
 encoding/wsgi.py=utf-8

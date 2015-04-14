@@ -1,0 +1,84 @@
+<%inherit file='/base.html'/>
+
+<%block name='head_css'>
+	${parent.head_css()}
+	<link rel="stylesheet" href="${STATIC_URL}css/order/common2.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	<link rel="stylesheet" href="${STATIC_URL}css/order/order_list.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+</%block>
+
+<%block name='header'>
+	<%include file='/cute_header.part'/>
+</%block>
+
+<%block name='content'>
+<div class="g-wrap clearfix">
+	<div class="g-content">
+		<div class="g-container">
+			<div id="J_order_list">
+				<table class="m-table">
+					<colgroup>
+						<col class="c1">
+						<col class="c2">
+						<col class="c3">
+						<col class="c4">
+						<col class="c5">
+					</colgroup>
+					<thead>
+						<tr class="col-name">
+							<th>商品</th>
+							<th>订单总额</th>
+							<th></th>
+							<th>操作</th>
+							<th>其他操作</th>
+						</tr>
+					</thead>
+					% for order in orders:
+					<tbody data-receiver="吕泽立">
+						<tr class="order-hd">
+							<td colspan="5"><i class="">&nbsp;</i><span class="num">订单号：${order.id}<em class="type">&nbsp;&nbsp;</em></span><span class="recipients">收货人：${order.customer}</span><span class="num">下单时间：${order.time}</span><!-- 获得的唯品币大于零，展示唯品币数目 --></td>
+						</tr>
+						<% 
+							first_item = True 
+							count = order.order_items.all().count()
+						%>
+						% for item in order.order_items.all():
+						<tr class="order-bd">
+							<!--第一个货品信息开始读  唯闪不能打开链接-->
+							<td class="goods"><a href="/${item.good.store.id}/${item.good.id}/" target="_blank" class="pic"><img src="${STATIC_URL}images/640" width="50" height="63" alt=""></a>
+							<div class="goods-info">
+								<a href="/${item.good.store.id}/${item.good.id}/" target="_blank" class="name">${item.good.name}</a>
+								<span class="size">${item.options}</span>
+							</div></td>
+							<!--第一个货品信息开始读  结束-->
+							% if first_item:
+							<td class="price" rowspan="${count}">
+							<p>
+								<strong>¥${order.total_fare}</strong>
+							</p></td>
+							<td class="state" rowspan="${count}">
+							<p class="purple">
+								<span style="color:red">未签收</span>
+							</p><!-- 判断是否展示订单物流信息 --><!-- 判断是否展示订单物流信息 结束--><a href="###" target="_blank" mars_sead="account_order_detail_btn">订单详情</a></td>
+							<!-- 菜单订单信息 -->
+							<td class="control" rowspan="${count}">
+							<p>
+								<a href="javascript:;" role="button" mars_sead="account_order_secondpay_btn" class="ui-btn-mini ui-btn1 J_pay">签收</a>
+							</p></td>
+							<td class="other" rowspan="${count}">
+							<p>
+								<a class="J_cancel" role="button" mars_sead="account_order_cancel_btn" href="javascript:;">取消订单</a>
+							</p></td>
+							<!-- 菜单订单信息  结束-->
+							% endif
+							<% first_item = False %>
+						</tr>
+						% endfor
+					</tbody>
+					% endfor
+				</table>
+			</div>
+		</div>
+	</div>
+		
+</div>
+</%block>
