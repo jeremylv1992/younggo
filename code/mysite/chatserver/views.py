@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from ws4redis.redis_store import RedisMessage
 from ws4redis.publisher import RedisPublisher
 
+from common.mymako import render_json
 
 class BroadcastChatView(TemplateView):
     template_name = 'broadcast_chat.html'
@@ -52,3 +53,14 @@ class GroupChatView(TemplateView):
         message = RedisMessage(request.POST.get('message'))
         redis_publisher.publish_message(message)
         return HttpResponse('OK')
+
+def send_message(request):
+    '''
+    @summary:send message to special users
+    '''
+    redis_publisher = RedisPublisher(facility='foobar', users=[request.POST.get('user'), 
+                        request.user.username])
+    msg = request.POST.get('message')
+    message = RedisMessage(u"%s: %s" %(request.user.username, msg))
+    redis_publisher.publish_message(message)
+    return render_json({'result': True})   

@@ -13,3 +13,7 @@ urlpatterns = patterns('',
     url(r'^groupchat/$', GroupChatView.as_view(), name='group_chat'),
     url(r'^$', RedirectView.as_view(url=reverse_lazy('user_chat'))),
 )
+
+urlpatterns += patterns('chatserver.views',
+	url(r'^send_message/$', 'send_message'),
+)
